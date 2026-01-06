@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Julian de Groot | Developer & AI Enthusiast</title>
+    <title>juliato | Developer & AI Enthusiast</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <style>
         :root {
             --bg-dark: #0a0a0f;
@@ -34,7 +36,108 @@
         }
 
         html {
-            scroll-behavior: smooth;
+            /* Lenis handles smooth scroll */
+        }
+
+        html.lenis, html.lenis body {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-smooth iframe {
+            pointer-events: none;
+        }
+
+        /* Scroll Progress Indicator - Premium */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--gradient-main);
+            z-index: 10000;
+            transform-origin: left;
+            will-change: transform;
+        }
+
+        .scroll-progress::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan);
+        }
+
+        /* Premium Custom Cursor */
+        .cursor {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            will-change: transform;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                        background 0.3s ease,
+                        border 0.3s ease;
+        }
+
+        .cursor.hover {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: transparent;
+        }
+
+        .cursor.clicking {
+            transform: scale(0.8);
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            will-change: transform;
+            transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cursor-dot.hover {
+            transform: scale(0);
+        }
+
+        @media (max-width: 768px) {
+            .cursor, .cursor-dot { display: none; }
+        }
+
+        /* Premium Spring Easing */
+        :root {
+            --spring-easing: cubic-bezier(0.16, 1, 0.3, 1);
+            --spring-duration: 0.8s;
+            --smooth-easing: cubic-bezier(0.45, 0, 0.55, 1);
         }
 
         body {
@@ -82,6 +185,366 @@
             z-index: 0;
         }
 
+        /* Text Reveal Animation */
+        .text-reveal {
+            overflow: hidden;
+        }
+
+        .text-reveal span {
+            display: inline-block;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.8s ease;
+        }
+
+        .text-reveal.visible span {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Word-by-word reveal */
+        .word-reveal .word {
+            display: inline-block;
+            transform: translateY(40px) rotateX(-20deg);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .word-reveal.visible .word {
+            transform: translateY(0) rotateX(0);
+            opacity: 1;
+        }
+
+        /* Staggered delays for words */
+        .word-reveal.visible .word:nth-child(1) { transition-delay: 0s; }
+        .word-reveal.visible .word:nth-child(2) { transition-delay: 0.05s; }
+        .word-reveal.visible .word:nth-child(3) { transition-delay: 0.1s; }
+        .word-reveal.visible .word:nth-child(4) { transition-delay: 0.15s; }
+        .word-reveal.visible .word:nth-child(5) { transition-delay: 0.2s; }
+        .word-reveal.visible .word:nth-child(6) { transition-delay: 0.25s; }
+        .word-reveal.visible .word:nth-child(7) { transition-delay: 0.3s; }
+        .word-reveal.visible .word:nth-child(8) { transition-delay: 0.35s; }
+
+        /* Parallax Container */
+        .parallax-section {
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .parallax-bg {
+            transform: translateZ(-1px) scale(1.5);
+        }
+
+        /* Premium Section Transitions - Content always visible */
+        section {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero is always visible */
+        .hero,
+        .hero > * {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        /* Scroll-linked opacity */
+        [data-scroll] {
+            will-change: transform, opacity;
+        }
+
+        /* Premium Reveal - Clip Path */
+        .reveal-clip {
+            clip-path: inset(100% 0 0 0);
+            transition: clip-path 1s var(--spring-easing);
+        }
+
+        .reveal-clip.visible {
+            clip-path: inset(0 0 0 0);
+        }
+
+        /* Premium Reveal - Mask */
+        .reveal-mask {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reveal-mask::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--bg-dark);
+            transform: translateX(0);
+            transition: transform 1s var(--spring-easing);
+        }
+
+        .reveal-mask.visible::after {
+            transform: translateX(101%);
+        }
+
+        /* Premium Character Reveal */
+        .char-reveal {
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .char-reveal .char {
+            display: inline-block;
+            transform: translateY(100%) rotate(10deg);
+            opacity: 0;
+            transition: transform 0.6s var(--spring-easing), 
+                        opacity 0.6s ease;
+        }
+
+        .char-reveal.visible .char {
+            transform: translateY(0) rotate(0);
+            opacity: 1;
+        }
+
+        /* Staggered character delays */
+        .char-reveal .char:nth-child(1) { transition-delay: 0.02s; }
+        .char-reveal .char:nth-child(2) { transition-delay: 0.04s; }
+        .char-reveal .char:nth-child(3) { transition-delay: 0.06s; }
+        .char-reveal .char:nth-child(4) { transition-delay: 0.08s; }
+        .char-reveal .char:nth-child(5) { transition-delay: 0.10s; }
+        .char-reveal .char:nth-child(6) { transition-delay: 0.12s; }
+        .char-reveal .char:nth-child(7) { transition-delay: 0.14s; }
+        .char-reveal .char:nth-child(8) { transition-delay: 0.16s; }
+        .char-reveal .char:nth-child(9) { transition-delay: 0.18s; }
+        .char-reveal .char:nth-child(10) { transition-delay: 0.20s; }
+        .char-reveal .char:nth-child(11) { transition-delay: 0.22s; }
+        .char-reveal .char:nth-child(12) { transition-delay: 0.24s; }
+        .char-reveal .char:nth-child(13) { transition-delay: 0.26s; }
+        .char-reveal .char:nth-child(14) { transition-delay: 0.28s; }
+        .char-reveal .char:nth-child(15) { transition-delay: 0.30s; }
+
+        /* Premium Line Reveal */
+        .line-reveal {
+            overflow: hidden;
+        }
+
+        .line-reveal .line {
+            display: block;
+            transform: translateY(100%);
+            transition: transform 0.8s var(--spring-easing);
+        }
+
+        .line-reveal.visible .line {
+            transform: translateY(0);
+        }
+
+        .line-reveal.visible .line:nth-child(2) { transition-delay: 0.1s; }
+        .line-reveal.visible .line:nth-child(3) { transition-delay: 0.2s; }
+
+        /* Premium Scale Reveal */
+        .scale-reveal {
+            transform: scale(0.8);
+            opacity: 0;
+            filter: blur(10px);
+            transition: transform 1s var(--spring-easing),
+                        opacity 0.8s ease,
+                        filter 0.8s ease;
+        }
+
+        .scale-reveal.visible {
+            transform: scale(1);
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        /* Premium 3D Reveal */
+        .perspective-reveal {
+            perspective: 1000px;
+        }
+
+        .perspective-reveal .reveal-content {
+            transform: rotateX(45deg) translateY(50px);
+            transform-origin: center top;
+            opacity: 0;
+            transition: transform 1s var(--spring-easing),
+                        opacity 0.8s ease;
+        }
+
+        .perspective-reveal.visible .reveal-content {
+            transform: rotateX(0) translateY(0);
+            opacity: 1;
+        }
+
+        /* Scroll Velocity Effects */
+        .velocity-scale {
+            transition: transform 0.1s linear;
+        }
+
+        /* Sticky Scroll Section */
+        .sticky-section {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Premium Gradient Text on Scroll */
+        .gradient-text-scroll {
+            background: linear-gradient(90deg, var(--text-primary) 0%, var(--text-primary) 50%, var(--accent-cyan) 50%, var(--accent-purple) 100%);
+            background-size: 200% 100%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-position: 100% 0;
+            transition: background-position 0.5s ease;
+        }
+
+        .gradient-text-scroll.active {
+            background-position: 0 0;
+        }
+
+        /* Scale-in effect for cards */
+        .scale-in {
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .scale-in.visible {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Slide from sides */
+        .slide-left {
+            transform: translateX(-100px);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .slide-left.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .slide-right {
+            transform: translateX(100px);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .slide-right.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* Blur-in effect */
+        .blur-in {
+            filter: blur(20px);
+            opacity: 0;
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .blur-in.visible {
+            filter: blur(0);
+            opacity: 1;
+        }
+
+        /* Glow pulse on scroll */
+        .glow-on-scroll {
+            transition: box-shadow 0.5s ease;
+        }
+
+        .glow-on-scroll.glowing {
+            box-shadow: 0 0 40px var(--glow-cyan), 0 0 80px var(--glow-purple);
+        }
+
+        /* Rotating elements on scroll */
+        .rotate-on-scroll {
+            transition: transform 0.1s linear;
+        }
+
+        /* Floating animation enhanced */
+        .float-on-scroll {
+            animation: floatEnhanced 6s ease-in-out infinite;
+        }
+
+        @keyframes floatEnhanced {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg); 
+            }
+            25% { 
+                transform: translateY(-20px) rotate(5deg); 
+            }
+            50% { 
+                transform: translateY(-10px) rotate(0deg); 
+            }
+            75% { 
+                transform: translateY(-25px) rotate(-5deg); 
+            }
+        }
+
+        /* Magnetic button effect */
+        .magnetic {
+            transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        /* Counter animation */
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Smooth hover lift */
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.4s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Shimmer effect */
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Typewriter effect */
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid var(--accent-cyan);
+            animation: typing 3s steps(40) 1s forwards, blink 0.7s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
         /* Navigation */
         nav {
             position: fixed;
@@ -93,6 +556,7 @@
             background: rgba(10, 10, 15, 0.8);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), background 0.3s ease, box-shadow 0.3s ease;
         }
 
         .nav-container {
@@ -437,6 +901,25 @@
 
         .bento-item:hover .project-visual-bg {
             transform: scale(1.1);
+        }
+
+        .project-screenshot {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+
+        .bento-item:hover .project-screenshot {
+            transform: scale(1.1);
+        }
+
+        .project-visual-bg.has-screenshot {
+            opacity: 0.3;
         }
 
         .visual-game {
@@ -1074,6 +1557,13 @@
     </style>
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+    
     <!-- Animated backgrounds -->
     <div class="gradient-bg"></div>
     <div class="grid-pattern"></div>
@@ -1081,7 +1571,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="nav-logo">&lt;julian /&gt;</a>
+            <a href="#" class="nav-logo">&lt;juliato /&gt;</a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -1111,7 +1601,7 @@
                 </svg>
                 AI-Powered Development
             </div>
-            <h1>Hey, I'm <span class="gradient-text">Julian</span></h1>
+            <h1>Hey, I'm <span class="gradient-text">juliato</span></h1>
             <p class="hero-tagline">16-year-old developer building the future with AI, creative coding, and agentic workflows</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn-primary">
@@ -1154,7 +1644,8 @@
                     </div>
                     <div class="project-inner">
                         <div class="project-visual">
-                            <div class="project-visual-bg visual-game"></div>
+                            <div class="project-visual-bg visual-game has-screenshot"></div>
+                            <img src="screenshots/plantini-city.png" alt="Plantini City 3D Game" class="project-screenshot" onerror="this.style.display='none'">
                             <div class="shape shape-1"></div>
                             <div class="shape shape-2"></div>
                             <div class="floating-elements">
@@ -1182,7 +1673,8 @@
                     <a href="https://sipandgrow.org" target="_blank" class="project-link"></a>
                     <div class="project-inner">
                         <div class="project-visual">
-                            <div class="project-visual-bg visual-website"></div>
+                            <div class="project-visual-bg visual-website has-screenshot"></div>
+                            <img src="screenshots/sipandgrow.png" alt="Sip & Grow Website" class="project-screenshot" onerror="this.style.display='none'">
                             <div class="floating-elements">
                                 <span class="float-icon">🌱</span>
                             </div>
@@ -1207,7 +1699,8 @@
                 <div class="bento-item bento-medium fade-up stagger-3">
                     <div class="project-inner">
                         <div class="project-visual">
-                            <div class="project-visual-bg visual-featured"></div>
+                            <div class="project-visual-bg visual-featured has-screenshot"></div>
+                            <img src="screenshots/agentic-workflows.png" alt="Agentic Workflows" class="project-screenshot" onerror="this.style.display='none'">
                             <div class="floating-elements">
                                 <span class="float-icon">🤖</span>
                             </div>
@@ -1230,6 +1723,7 @@
                     <div class="project-inner">
                         <div class="project-visual">
                             <div class="project-visual-bg" style="background: linear-gradient(135deg, #7c2d12 0%, #431407 100%);"></div>
+                            <img src="screenshots/java-learning.png" alt="Java Learning" class="project-screenshot" onerror="this.style.display='none'">
                             <div class="floating-elements">
                                 <span class="float-icon">☕</span>
                             </div>
@@ -1240,10 +1734,10 @@
                                 <span class="tech-pill">OOP</span>
                             </div>
                             <h3 class="project-title">
-                                Java Projects
+                                Java Learning
                                 <span class="arrow">→</span>
                             </h3>
-                            <p class="project-desc">Backend systems and algorithms.</p>
+                            <p class="project-desc">Learned in school, in CS class.</p>
                         </div>
                     </div>
                 </div>
@@ -1257,7 +1751,8 @@
                     </div>
                     <div class="project-inner">
                         <div class="project-visual">
-                            <div class="project-visual-bg" style="background: linear-gradient(135deg, #854d0e 0%, #422006 50%, #1c1917 100%);"></div>
+                            <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #854d0e 0%, #422006 50%, #1c1917 100%);"></div>
+                            <img src="screenshots/cryptohub-malta.png" alt="CryptoHub Malta" class="project-screenshot" onerror="this.style.display='none'">
                             <div class="shape shape-1" style="background: #eab308; width: 150px; height: 150px;"></div>
                             <div class="floating-elements">
                                 <span class="float-icon">₿</span>
@@ -1453,7 +1948,7 @@
                 <div class="about-content fade-up">
                     <h3>Developer. Creator.<br><span>AI Enthusiast.</span></h3>
                     <p>
-                        I'm Julian, a 16-year-old developer who's passionate about building innovative digital experiences. 
+                        I'm juliato, a 16-year-old developer who's passionate about building innovative digital experiences. 
                         My journey started with curiosity and grew into a full-blown obsession with creating things that matter.
                     </p>
                     <p>
@@ -1464,20 +1959,6 @@
                         I'm a huge fan of <strong>vibe coding</strong> — that flow state where creativity meets code and amazing things come to life. 
                         Whether it's 3D games, websites, or experimental AI projects, I love pushing boundaries.
                     </p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Projects Built</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">3+</div>
-                            <div class="stat-label">Years Coding</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">∞</div>
-                            <div class="stat-label">Curiosity</div>
-                        </div>
-                    </div>
                 </div>
                 <div class="about-visual fade-up stagger-2">
                     <div class="about-card">
@@ -1517,16 +1998,16 @@
                             </svg>
                             GitHub — @Jul1ato
                         </a>
-                        <a href="mailto:contact@juliato.dev" class="contact-link">
+                        <a href="mailto:julianthegroot@gmail.com" class="contact-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                 <path d="M22 6l-10 7L2 6"/>
                             </svg>
-                            contact@juliato.dev
+                            julianthegroot@gmail.com
                         </a>
                     </div>
                 </div>
-                <form class="contact-form fade-up stagger-2" action="#" method="POST">
+                <form class="contact-form fade-up stagger-2" id="contactForm" action="https://formspree.io/f/xlgdyoja" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -1539,9 +2020,12 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
                     </div>
-                    <button type="submit" class="form-submit">
+                    <input type="hidden" name="_replyto" value="julianthegroot@gmail.com">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio">
+                    <button type="submit" class="form-submit" id="submitBtn">
                         Send Message →
                     </button>
+                    <div id="formStatus" style="margin-top: 1rem; display: none;"></div>
                 </form>
             </div>
         </div>
@@ -1549,7 +2033,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-logo">&lt;julian /&gt;</div>
+        <div class="footer-logo">&lt;juliato /&gt;</div>
         <p class="footer-text">Building the future with code & AI ✨</p>
         <div class="footer-socials">
             <a href="https://github.com/Jul1ato" target="_blank" class="footer-social">
@@ -1564,7 +2048,7 @@
             </a>
         </div>
         <p class="footer-text" style="font-size: 0.85rem;">
-            © 2026 Julian de Groot. Made with ❤️ and AI.
+            © 2026 juliato. Made with ❤️ and AI.
         </p>
     </footer>
 
@@ -1596,12 +2080,45 @@
         
         fadeElements.forEach(element => observer.observe(element));
 
-        // Form submission
-        const contactForm = document.querySelector('.contact-form');
-        contactForm.addEventListener('submit', (e) => {
+        // Form submission with Formspree
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('formStatus');
+        
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            alert('Thanks for your message! I\'ll get back to you soon. 🚀');
-            contactForm.reset();
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formStatus.style.display = 'none';
+            
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    formStatus.style.display = 'block';
+                    formStatus.style.color = '#22c55e';
+                    formStatus.textContent = '✓ Thanks for your message! I\'ll get back to you soon. 🚀';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                formStatus.style.display = 'block';
+                formStatus.style.color = '#ef4444';
+                formStatus.textContent = '✗ Oops! Something went wrong. Please email me directly at julianthegroot@gmail.com';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message →';
+            }
         });
 
         // Parallax effect on bento items
@@ -1622,6 +2139,380 @@
                 item.style.transform = '';
             });
         });
+
+        // ===== LENIS SMOOTH SCROLL (FRAMER-LIKE) =====
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential easing
+            orientation: 'vertical',
+            gestureOrientation: 'vertical',
+            smoothWheel: true,
+            wheelMultiplier: 1,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+
+        // Lenis RAF loop
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Track scroll velocity for effects
+        let scrollVelocity = 0;
+        lenis.on('scroll', ({ velocity }) => {
+            scrollVelocity = velocity;
+        });
+
+        // ===== SCROLL PROGRESS INDICATOR =====
+        const scrollProgress = document.getElementById('scrollProgress');
+        
+        lenis.on('scroll', ({ progress }) => {
+            scrollProgress.style.width = (progress * 100) + '%';
+        });
+
+        // ===== PREMIUM CUSTOM CURSOR =====
+        const cursor = document.getElementById('cursor');
+        const cursorDot = document.getElementById('cursorDot');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let dotX = 0, dotY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Premium smooth cursor with spring physics
+        function animateCursor() {
+            // Spring physics for main cursor
+            const springStrength = 0.08;
+            const damping = 0.8;
+            
+            const dx = mouseX - cursorX;
+            const dy = mouseY - cursorY;
+            
+            cursorX += dx * springStrength;
+            cursorY += dy * springStrength;
+            
+            // Dot follows faster
+            dotX += (mouseX - dotX) * 0.2;
+            dotY += (mouseY - dotY) * 0.2;
+            
+            cursor.style.transform = `translate(${cursorX - 20}px, ${cursorY - 20}px)`;
+            cursorDot.style.transform = `translate(${dotX - 4}px, ${dotY - 4}px)`;
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Cursor hover effects
+        const hoverElements = document.querySelectorAll('a, button, .bento-item, .skill-category, input, textarea');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+                cursorDot.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+                cursorDot.classList.remove('hover');
+            });
+        });
+
+        // Click effect
+        document.addEventListener('mousedown', () => cursor.classList.add('clicking'));
+        document.addEventListener('mouseup', () => cursor.classList.remove('clicking'));
+
+        // ===== SCROLL-LINKED PARALLAX =====
+        function updateScrollEffects() {
+            const scrollY = lenis.scroll;
+            const windowHeight = window.innerHeight;
+            
+            // Gradient background parallax
+            const gradientBg = document.querySelector('.gradient-bg');
+            if (gradientBg) {
+                gradientBg.style.transform = `translate3d(0, ${scrollY * 0.3}px, 0)`;
+            }
+            
+            // Hero content parallax with opacity
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                const heroContent = hero.querySelector('.hero-content');
+                if (heroContent) {
+                    const heroProgress = Math.min(scrollY / windowHeight, 1);
+                    heroContent.style.transform = `translate3d(0, ${scrollY * 0.5}px, 0)`;
+                    heroContent.style.opacity = 1 - (heroProgress * 1.5);
+                }
+            }
+            
+            // Velocity-based scaling for cards
+            document.querySelectorAll('.bento-item').forEach(card => {
+                const velocityScale = 1 - Math.abs(scrollVelocity) * 0.0002;
+                card.style.transform = `scale(${Math.max(0.98, velocityScale)})`;
+            });
+            
+            // Float icons with scroll-linked rotation
+            document.querySelectorAll('.float-icon').forEach((icon, index) => {
+                const rect = icon.getBoundingClientRect();
+                const centerY = rect.top + rect.height / 2;
+                const screenCenter = windowHeight / 2;
+                const distance = (centerY - screenCenter) / screenCenter;
+                
+                icon.style.transform = `
+                    translate3d(0, ${Math.sin(scrollY * 0.003 + index) * 15}px, 0) 
+                    rotate(${distance * 10}deg)
+                    scale(${1 - Math.abs(distance) * 0.1})
+                `;
+            });
+            
+            requestAnimationFrame(updateScrollEffects);
+        }
+        updateScrollEffects();
+
+        // ===== INTERSECTION OBSERVER FOR REVEALS =====
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { 
+            threshold: 0.05, 
+            rootMargin: '0px 0px -5% 0px' 
+        });
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            revealObserver.observe(section);
+        });
+
+        // Observe all reveal elements
+        document.querySelectorAll('.fade-up, .scale-reveal, .reveal-clip, .char-reveal, .line-reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Scroll-linked section visibility check
+        lenis.on('scroll', () => {
+            document.querySelectorAll('section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // If section is in view (even partially)
+                if (rect.top < windowHeight * 0.9 && rect.bottom > 0) {
+                    section.classList.add('in-view');
+                    section.classList.add('visible');
+                }
+            });
+        });
+
+        // ===== STAGGERED BENTO CARD REVEALS =====
+        const bentoCards = document.querySelectorAll('.bento-item');
+        let bentoRevealed = false;
+        
+        const bentoObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const index = Array.from(bentoCards).indexOf(entry.target);
+                    entry.target.style.transitionDelay = `${index * 0.12}s`;
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0, rootMargin: '50px' });
+        
+        bentoCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(80px) scale(0.9) rotateX(10deg)';
+            card.style.transformOrigin = 'center bottom';
+            card.style.transition = 'opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1)';
+            bentoObserver.observe(card);
+        });
+
+        // Scroll-linked bento reveal
+        lenis.on('scroll', () => {
+            if (bentoRevealed) return;
+            
+            const projectsSection = document.getElementById('projects');
+            if (projectsSection) {
+                const rect = projectsSection.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    bentoCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('revealed');
+                        }, index * 120);
+                    });
+                    bentoRevealed = true;
+                }
+            }
+        });
+
+        // Add revealed styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .bento-item.revealed {
+                opacity: 1 !important;
+                transform: translateY(0) scale(1) rotateX(0deg) !important;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // ===== MAGNETIC BUTTON EFFECT (ENHANCED) =====
+        document.querySelectorAll('.btn-primary, .btn-secondary, .nav-link').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                btn.style.transform = `translate3d(${x * 0.4}px, ${y * 0.4}px, 0)`;
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate3d(0, 0, 0)';
+                btn.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+            });
+            
+            btn.addEventListener('mouseenter', () => {
+                btn.style.transition = 'transform 0.1s ease';
+            });
+        });
+
+        // ===== NAVBAR SCROLL EFFECT (ENHANCED) =====
+        const nav = document.querySelector('nav');
+        let lastScrollY = 0;
+        
+        lenis.on('scroll', ({ scroll, direction }) => {
+            // Background change
+            if (scroll > 100) {
+                nav.style.background = 'rgba(10, 10, 15, 0.95)';
+                nav.style.backdropFilter = 'blur(20px) saturate(180%)';
+                nav.style.boxShadow = '0 1px 0 rgba(255, 255, 255, 0.05)';
+            } else {
+                nav.style.background = 'rgba(10, 10, 15, 0.8)';
+                nav.style.backdropFilter = 'blur(20px)';
+                nav.style.boxShadow = 'none';
+            }
+            
+            // Hide/show based on direction
+            if (direction === 1 && scroll > 300) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollY = scroll;
+        });
+
+        // ===== SKILL DOTS WAVE ANIMATION =====
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const dots = entry.target.querySelectorAll('.skill-dot.filled');
+                    dots.forEach((dot, index) => {
+                        dot.style.transition = `transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.08}s, 
+                                               box-shadow 0.4s ease ${index * 0.08}s`;
+                        dot.style.transform = 'scale(1.4)';
+                        dot.style.boxShadow = '0 0 15px currentColor';
+                        
+                        setTimeout(() => {
+                            dot.style.transform = 'scale(1)';
+                            dot.style.boxShadow = '0 0 5px currentColor';
+                        }, 300 + index * 80);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('.skill-item').forEach(item => skillObserver.observe(item));
+
+        // ===== CHARACTER-BY-CHARACTER TEXT REVEAL =====
+        function splitTextToChars(element) {
+            const text = element.textContent;
+            element.innerHTML = '';
+            element.classList.add('char-reveal');
+            
+            text.split('').forEach((char, index) => {
+                const span = document.createElement('span');
+                span.className = 'char';
+                span.textContent = char === ' ' ? '\u00A0' : char;
+                span.style.transitionDelay = `${index * 0.02}s`;
+                element.appendChild(span);
+            });
+        }
+
+        // Apply to hero title on load
+        window.addEventListener('load', () => {
+            const heroTitle = document.querySelector('.hero-title');
+            if (heroTitle) {
+                splitTextToChars(heroTitle);
+                setTimeout(() => heroTitle.classList.add('visible'), 300);
+            }
+            
+            // Force all sections to be visible immediately
+            document.querySelectorAll('section').forEach((section, index) => {
+                section.classList.add('in-view');
+                section.classList.add('visible');
+            });
+            
+            // Trigger bento cards with stagger
+            setTimeout(() => {
+                document.querySelectorAll('.bento-item').forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('revealed');
+                    }, index * 120);
+                });
+            }, 500);
+        });
+
+        // ===== SMOOTH ANCHOR SCROLLING WITH LENIS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    lenis.scrollTo(target, {
+                        offset: -100,
+                        duration: 1.5,
+                        easing: (t) => 1 - Math.pow(1 - t, 4) // Ease out quart
+                    });
+                }
+            });
+        });
+
+        // ===== SCROLL-LINKED GRADIENT TEXT =====
+        document.querySelectorAll('.section-title').forEach(title => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        title.classList.add('gradient-text-scroll', 'active');
+                    }
+                });
+            }, { threshold: 0.5 });
+            observer.observe(title);
+        });
+
+        // ===== EASTER EGG: Konami Code =====
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    document.body.style.animation = 'rainbow 2s linear infinite';
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
     </script>
+    
+    <style>
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+    </style>
 </body>
 </html>
