@@ -805,8 +805,15 @@
             overflow: hidden;
             position: relative;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             cursor: pointer;
+            /* Initial hidden state for reveal animation */
+            opacity: 0;
+            transform: translateY(80px) scale(0.9) rotateX(10deg);
+            transform-origin: center bottom;
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.3s ease,
+                        box-shadow 0.3s ease;
         }
 
         .bento-item::before {
@@ -2048,11 +2055,6 @@
         }
         requestAnimationFrame(raf);
 
-        // Track scroll velocity for effects
-        let scrollVelocity = 0;
-        lenis.on('scroll', ({ velocity }) => {
-            scrollVelocity = velocity;
-        });
 
         // ===== SCROLL PROGRESS INDICATOR =====
         const scrollProgress = document.getElementById('scrollProgress');
@@ -2114,47 +2116,26 @@
         document.addEventListener('mouseup', () => cursor.classList.remove('clicking'));
 
         // ===== SCROLL-LINKED PARALLAX =====
+        // Cache DOM queries for performance
+        const gradientBg = document.querySelector('.gradient-bg');
+        const heroContent = document.querySelector('.hero-content');
+        const windowHeight = window.innerHeight;
+
         function updateScrollEffects() {
             const scrollY = lenis.scroll;
-            const windowHeight = window.innerHeight;
-            
+
             // Gradient background parallax
-            const gradientBg = document.querySelector('.gradient-bg');
             if (gradientBg) {
                 gradientBg.style.transform = `translate3d(0, ${scrollY * 0.3}px, 0)`;
             }
-            
+
             // Hero content parallax with opacity
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                const heroContent = hero.querySelector('.hero-content');
-                if (heroContent) {
-                    const heroProgress = Math.min(scrollY / windowHeight, 1);
-                    heroContent.style.transform = `translate3d(0, ${scrollY * 0.5}px, 0)`;
-                    heroContent.style.opacity = 1 - (heroProgress * 1.5);
-                }
+            if (heroContent) {
+                const heroProgress = Math.min(scrollY / windowHeight, 1);
+                heroContent.style.transform = `translate3d(0, ${scrollY * 0.5}px, 0)`;
+                heroContent.style.opacity = 1 - (heroProgress * 1.5);
             }
-            
-            // Velocity-based scaling for cards
-            document.querySelectorAll('.bento-item').forEach(card => {
-                const velocityScale = 1 - Math.abs(scrollVelocity) * 0.0002;
-                card.style.transform = `scale(${Math.max(0.98, velocityScale)})`;
-            });
-            
-            // Float icons with scroll-linked rotation
-            document.querySelectorAll('.float-icon').forEach((icon, index) => {
-                const rect = icon.getBoundingClientRect();
-                const centerY = rect.top + rect.height / 2;
-                const screenCenter = windowHeight / 2;
-                const distance = (centerY - screenCenter) / screenCenter;
-                
-                icon.style.transform = `
-                    translate3d(0, ${Math.sin(scrollY * 0.003 + index) * 15}px, 0) 
-                    rotate(${distance * 10}deg)
-                    scale(${1 - Math.abs(distance) * 0.1})
-                `;
-            });
-            
+
             requestAnimationFrame(updateScrollEffects);
         }
         updateScrollEffects();
@@ -2182,24 +2163,9 @@
             revealObserver.observe(el);
         });
 
-        // Scroll-linked section visibility check
-        lenis.on('scroll', () => {
-            document.querySelectorAll('section').forEach(section => {
-                const rect = section.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                
-                // If section is in view (even partially)
-                if (rect.top < windowHeight * 0.9 && rect.bottom > 0) {
-                    section.classList.add('in-view');
-                    section.classList.add('visible');
-                }
-            });
-        });
-
         // ===== STAGGERED BENTO CARD REVEALS =====
         const bentoCards = document.querySelectorAll('.bento-item');
-        let bentoRevealed = false;
-        
+
         const bentoObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -2211,29 +2177,7 @@
         }, { threshold: 0, rootMargin: '50px' });
         
         bentoCards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(80px) scale(0.9) rotateX(10deg)';
-            card.style.transformOrigin = 'center bottom';
-            card.style.transition = 'opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1)';
             bentoObserver.observe(card);
-        });
-
-        // Scroll-linked bento reveal
-        lenis.on('scroll', () => {
-            if (bentoRevealed) return;
-            
-            const projectsSection = document.getElementById('projects');
-            if (projectsSection) {
-                const rect = projectsSection.getBoundingClientRect();
-                if (rect.top < window.innerHeight * 0.8) {
-                    bentoCards.forEach((card, index) => {
-                        setTimeout(() => {
-                            card.classList.add('revealed');
-                        }, index * 120);
-                    });
-                    bentoRevealed = true;
-                }
-            }
         });
 
         // Add revealed styles
@@ -2340,15 +2284,6 @@
                 section.classList.add('in-view');
                 section.classList.add('visible');
             });
-            
-            // Trigger bento cards with stagger
-            setTimeout(() => {
-                document.querySelectorAll('.bento-item').forEach((card, index) => {
-                    setTimeout(() => {
-                        card.classList.add('revealed');
-                    }, index * 120);
-                });
-            }, 500);
         });
 
         // ===== SMOOTH ANCHOR SCROLLING WITH LENIS =====
