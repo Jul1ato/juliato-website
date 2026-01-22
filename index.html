@@ -735,19 +735,24 @@
             position: absolute;
             bottom: 3rem;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) !important;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
             color: var(--text-muted);
             font-size: 0.8rem;
+            max-width: 900px;
+        }
+
+        .scroll-indicator span,
+        .scroll-indicator svg {
             animation: bounce 2s ease-in-out infinite;
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(10px); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
         }
 
         /* Sections */
@@ -1269,10 +1274,15 @@
         }
 
         .about-avatar {
-            font-size: 6rem;
-            margin-bottom: 1.5rem;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 30%;
+            margin: 0 auto 1.5rem;
             display: block;
-            text-align: center;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .about-tags {
@@ -1851,7 +1861,7 @@
                 </div>
                 <div class="about-visual fade-up stagger-2">
                     <div class="about-card">
-                        <span class="about-avatar">👨‍💻</span>
+                        <img src="6a46194f-e2d8-4f57-9e90-2e31a6d481b5.png" alt="juliato" class="about-avatar">
                         <div class="about-tags">
                             <span class="about-tag">Learning</span>
                             <span class="about-tag">Building</span>
