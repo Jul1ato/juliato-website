@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>juliato | Developer & AI Enthusiast</title>
+    <title>juliato | Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -59,7 +59,7 @@
             pointer-events: none;
         }
 
-        /* Scroll Progress Indicator - Premium */
+        /* Scroll Progress Indicator */
         .scroll-progress {
             position: fixed;
             top: 0;
@@ -73,19 +73,10 @@
         }
 
         .scroll-progress::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 8px;
-            height: 8px;
-            background: var(--accent-cyan);
-            border-radius: 50%;
-            box-shadow: 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan);
+            display: none;
         }
 
-        /* Premium Custom Cursor */
+        /* Custom Cursor */
         .cursor {
             width: 40px;
             height: 40px;
@@ -133,7 +124,7 @@
             .cursor, .cursor-dot { display: none; }
         }
 
-        /* Premium Spring Easing */
+        /* Spring Easing */
         :root {
             --spring-easing: cubic-bezier(0.16, 1, 0.3, 1);
             --spring-duration: 0.8s;
@@ -235,7 +226,7 @@
             transform: translateZ(-1px) scale(1.5);
         }
 
-        /* Premium Section Transitions - Content always visible */
+        /* Section Transitions */
         section {
             opacity: 1;
             transform: translateY(0);
@@ -258,7 +249,7 @@
             will-change: transform, opacity;
         }
 
-        /* Premium Reveal - Clip Path */
+        /* Reveal - Clip Path */
         .reveal-clip {
             clip-path: inset(100% 0 0 0);
             transition: clip-path 1s var(--spring-easing);
@@ -268,7 +259,7 @@
             clip-path: inset(0 0 0 0);
         }
 
-        /* Premium Reveal - Mask */
+        /* Reveal - Mask */
         .reveal-mask {
             position: relative;
             overflow: hidden;
@@ -287,7 +278,7 @@
             transform: translateX(101%);
         }
 
-        /* Premium Character Reveal */
+        /* Character Reveal */
         .char-reveal {
             display: inline-block;
             overflow: hidden;
@@ -323,7 +314,7 @@
         .char-reveal .char:nth-child(14) { transition-delay: 0.28s; }
         .char-reveal .char:nth-child(15) { transition-delay: 0.30s; }
 
-        /* Premium Line Reveal */
+        /* Line Reveal */
         .line-reveal {
             overflow: hidden;
         }
@@ -341,7 +332,7 @@
         .line-reveal.visible .line:nth-child(2) { transition-delay: 0.1s; }
         .line-reveal.visible .line:nth-child(3) { transition-delay: 0.2s; }
 
-        /* Premium Scale Reveal */
+        /* Scale Reveal */
         .scale-reveal {
             transform: scale(0.8);
             opacity: 0;
@@ -357,7 +348,7 @@
             filter: blur(0);
         }
 
-        /* Premium 3D Reveal */
+        /* 3D Reveal */
         .perspective-reveal {
             perspective: 1000px;
         }
@@ -390,7 +381,7 @@
             justify-content: center;
         }
 
-        /* Premium Gradient Text on Scroll */
+        /* Gradient Text on Scroll */
         .gradient-text-scroll {
             background: linear-gradient(90deg, var(--text-primary) 0%, var(--text-primary) 50%, var(--accent-cyan) 50%, var(--accent-purple) 100%);
             background-size: 200% 100%;
@@ -615,7 +606,6 @@
         .nav-github:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: var(--accent-cyan);
-            box-shadow: 0 0 20px var(--glow-cyan);
         }
 
         .nav-github svg {
@@ -657,29 +647,14 @@
         }
 
         .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.6rem 1.25rem;
-            background: rgba(34, 211, 238, 0.1);
-            border: 1px solid rgba(34, 211, 238, 0.3);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--accent-cyan);
-            font-weight: 500;
-            margin-bottom: 2rem;
-            animation: glow 3s ease-in-out infinite alternate;
+            display: none;
         }
 
         @keyframes glow {
-            0% { box-shadow: 0 0 20px rgba(34, 211, 238, 0.2); }
-            100% { box-shadow: 0 0 40px rgba(34, 211, 238, 0.4); }
+            0% { box-shadow: 0 0 10px rgba(34, 211, 238, 0.1); }
+            100% { box-shadow: 0 0 15px rgba(34, 211, 238, 0.15); }
         }
 
-        .hero-badge svg {
-            width: 18px;
-            height: 18px;
-        }
 
         .hero h1 {
             font-size: clamp(3rem, 10vw, 6rem);
@@ -730,8 +705,8 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(168, 85, 247, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(168, 85, 247, 0.2);
         }
 
         .btn-secondary {
@@ -845,11 +820,9 @@
         }
 
         .bento-item:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: rgba(255, 255, 255, 0.15);
-            box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.4),
-                0 0 40px rgba(168, 85, 247, 0.15);
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         /* Bento item sizes */
@@ -1177,7 +1150,6 @@
 
         .skill-dot.filled {
             background: var(--accent-cyan);
-            box-shadow: 0 0 10px var(--glow-cyan);
         }
 
         /* Category colors */
@@ -1437,8 +1409,8 @@
         }
 
         .form-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(168, 85, 247, 0.3);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 16px rgba(168, 85, 247, 0.2);
         }
 
         /* Footer */
@@ -1595,14 +1567,8 @@
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-content">
-            <div class="hero-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
-                AI-Powered Development
-            </div>
             <h1>Hey, I'm <span class="gradient-text">juliato</span></h1>
-            <p class="hero-tagline">16-year-old developer building the future with AI, creative coding, and agentic workflows</p>
+            <p class="hero-tagline">A developer who likes to build things with code</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn-primary">
                     View My Work
@@ -1635,35 +1601,35 @@
             </div>
             
             <div class="bento-grid">
-                <!-- Featured: Plantini City 3D -->
+                <!-- Featured: CryptoHub Malta -->
                 <div class="bento-item bento-large fade-up stagger-1">
-                    <a href="https://sipandgrow.org/game3d" target="_blank" class="project-link"></a>
-                    <div class="featured-badge">
-                        <div class="live-dot"></div>
+                    <a href="https://cryptohubmalta.org" target="_blank" class="project-link"></a>
+                    <div class="featured-badge" style="background: rgba(234, 179, 8, 0.2); border-color: rgba(234, 179, 8, 0.4); color: #eab308;">
+                        <div class="live-dot" style="background: #eab308;"></div>
                         Featured Project
                     </div>
                     <div class="project-inner">
                         <div class="project-visual">
-                            <div class="project-visual-bg visual-game has-screenshot"></div>
-                            <img src="screenshots/plantini-city.png" alt="Plantini City 3D Game" class="project-screenshot" onerror="this.style.display='none'">
-                            <div class="shape shape-1"></div>
-                            <div class="shape shape-2"></div>
+                            <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #854d0e 0%, #422006 50%, #1c1917 100%);"></div>
+                            <img src="screenshots/cryptohub-malta.png" alt="CryptoHub Malta" class="project-screenshot" onerror="this.style.display='none'">
+                            <div class="shape shape-1" style="background: #eab308; width: 150px; height: 150px;"></div>
+                            <div class="shape shape-2" style="background: #eab308; width: 100px; height: 100px; opacity: 0.3;"></div>
                             <div class="floating-elements">
-                                <span class="float-icon">🎮</span>
+                                <span class="float-icon">₿</span>
                             </div>
                         </div>
                         <div class="project-info">
                             <div class="project-tech-stack">
-                                <span class="tech-pill highlight">Three.js</span>
-                                <span class="tech-pill">WebGL</span>
-                                <span class="tech-pill">JavaScript</span>
-                                <span class="tech-pill">3D Graphics</span>
+                                <span class="tech-pill highlight" style="background: rgba(234, 179, 8, 0.1); border-color: rgba(234, 179, 8, 0.3); color: #eab308;">Next.js</span>
+                                <span class="tech-pill">Figma</span>
+                                <span class="tech-pill">React</span>
+                                <span class="tech-pill">TypeScript</span>
                             </div>
                             <h3 class="project-title">
-                                Plantini City 3D
+                                CryptoHub Malta
                                 <span class="arrow">→</span>
                             </h3>
-                            <p class="project-desc">An immersive 3D browser game built from scratch with Three.js. Explore a virtual city environment with interactive elements, smooth camera controls, and dynamic lighting. A fun experiment combining gaming with web technologies.</p>
+                            <p class="project-desc">A crypto community website for CryptoHub Malta. Designed in Figma and built with Next.js. Features a simple, clean interface.</p>
                         </div>
                     </div>
                 </div>
@@ -1684,92 +1650,12 @@
                                 <span class="tech-pill highlight">Next.js</span>
                                 <span class="tech-pill">React</span>
                                 <span class="tech-pill">TypeScript</span>
-                                <span class="tech-pill" style="background: rgba(249, 115, 22, 0.1); border-color: rgba(249, 115, 22, 0.3); color: #f97316;">AI Dashboard</span>
                             </div>
                             <h3 class="project-title">
                                 Sip & Grow
                                 <span class="arrow">→</span>
                             </h3>
-                            <p class="project-desc">Modern Next.js website for a sustainable company creating biodegradable cups with seeds. Includes an AI-powered dashboard for smart business insights and management.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- More projects can be added here -->
-                <div class="bento-item bento-medium fade-up stagger-3">
-                    <div class="project-inner">
-                        <div class="project-visual">
-                            <div class="project-visual-bg visual-featured has-screenshot"></div>
-                            <img src="screenshots/agentic-workflows.png" alt="Agentic Workflows" class="project-screenshot" onerror="this.style.display='none'">
-                            <div class="floating-elements">
-                                <span class="float-icon">🤖</span>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-tech-stack">
-                                <span class="tech-pill highlight">Python</span>
-                                <span class="tech-pill">AI Agents</span>
-                            </div>
-                            <h3 class="project-title">
-                                Agentic Workflows
-                                <span class="arrow">→</span>
-                            </h3>
-                            <p class="project-desc">Building AI-powered automation tools.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bento-item bento-medium fade-up stagger-4">
-                    <div class="project-inner">
-                        <div class="project-visual">
-                            <div class="project-visual-bg" style="background: linear-gradient(135deg, #7c2d12 0%, #431407 100%);"></div>
-                            <img src="screenshots/java-learning.png" alt="Java Learning" class="project-screenshot" onerror="this.style.display='none'">
-                            <div class="floating-elements">
-                                <span class="float-icon">☕</span>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-tech-stack">
-                                <span class="tech-pill highlight">Java</span>
-                                <span class="tech-pill">OOP</span>
-                            </div>
-                            <h3 class="project-title">
-                                Java Learning
-                                <span class="arrow">→</span>
-                            </h3>
-                            <p class="project-desc">Learned in school, in CS class.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CryptoHub Malta -->
-                <div class="bento-item bento-wide fade-up stagger-2">
-                    <a href="https://cryptohubmalta.org" target="_blank" class="project-link"></a>
-                    <div class="featured-badge" style="background: rgba(234, 179, 8, 0.2); border-color: rgba(234, 179, 8, 0.4); color: #eab308;">
-                        <div class="live-dot" style="background: #eab308;"></div>
-                        Client Project
-                    </div>
-                    <div class="project-inner">
-                        <div class="project-visual">
-                            <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #854d0e 0%, #422006 50%, #1c1917 100%);"></div>
-                            <img src="screenshots/cryptohub-malta.png" alt="CryptoHub Malta" class="project-screenshot" onerror="this.style.display='none'">
-                            <div class="shape shape-1" style="background: #eab308; width: 150px; height: 150px;"></div>
-                            <div class="floating-elements">
-                                <span class="float-icon">₿</span>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-tech-stack">
-                                <span class="tech-pill" style="background: rgba(234, 179, 8, 0.1); border-color: rgba(234, 179, 8, 0.3); color: #eab308;">Next.js</span>
-                                <span class="tech-pill">Figma</span>
-                                <span class="tech-pill">React</span>
-                                <span class="tech-pill">TypeScript</span>
-                            </div>
-                            <h3 class="project-title">
-                                CryptoHub Malta
-                                <span class="arrow">→</span>
-                            </h3>
-                            <p class="project-desc">Crypto community website for CryptoHub Malta. Designed in Figma following guidelines by pro designer Zack Ritchie, then brought to life through vibe coding. Features modern UI and seamless UX.</p>
+                            <p class="project-desc">My first website. A Next.js website for a company making biodegradable cups with seeds.</p>
                         </div>
                     </div>
                 </div>
@@ -1783,6 +1669,9 @@
             <div class="section-header fade-up">
                 <p class="section-label">// Tech Stack</p>
                 <h2 class="section-title">Skills & Technologies</h2>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    I use AI tools as part of my development workflow. The technologies listed below are ones I work with using AI assistance.
+                </p>
             </div>
             
             <div class="skills-wrapper">
@@ -1946,29 +1835,27 @@
         <div class="section-container">
             <div class="about-grid">
                 <div class="about-content fade-up">
-                    <h3>Developer. Creator.<br><span>AI Enthusiast.</span></h3>
+                    <h3>About me</h3>
                     <p>
-                        I'm juliato, a 16-year-old developer who's passionate about building innovative digital experiences. 
-                        My journey started with curiosity and grew into a full-blown obsession with creating things that matter.
+                        I'm juliato, a developer who enjoys building things with code. 
+                        I like experimenting with different technologies and learning as I go.
                     </p>
                     <p>
-                        I heavily leverage <strong>AI and agentic workflows</strong> to boost my productivity and tackle complex problems at lightning speed. 
-                        From brainstorming ideas to debugging code, AI is my coding companion that helps me ship projects faster than ever.
+                        I use <strong>AI tools</strong> to help with my work, from writing code to debugging. 
+                        It's been helpful for learning and getting things done.
                     </p>
                     <p>
-                        I'm a huge fan of <strong>vibe coding</strong> — that flow state where creativity meets code and amazing things come to life. 
-                        Whether it's 3D games, websites, or experimental AI projects, I love pushing boundaries.
+                        I work on various projects — sometimes 3D games, sometimes websites, sometimes just trying out new ideas. 
+                        I'm still learning and figuring things out along the way.
                     </p>
                 </div>
                 <div class="about-visual fade-up stagger-2">
                     <div class="about-card">
                         <span class="about-avatar">👨‍💻</span>
                         <div class="about-tags">
-                            <span class="about-tag">🚀 Fast Learner</span>
-                            <span class="about-tag">🤖 AI-Powered</span>
-                            <span class="about-tag">🎮 3D Enthusiast</span>
-                            <span class="about-tag">✨ Creative Coder</span>
-                            <span class="about-tag">🔄 Agentic Workflows</span>
+                            <span class="about-tag">Learning</span>
+                            <span class="about-tag">Building</span>
+                            <span class="about-tag">Experimenting</span>
                         </div>
                     </div>
                 </div>
@@ -1985,11 +1872,10 @@
             </div>
             <div class="contact-wrapper">
                 <div class="contact-info fade-up">
-                    <h3>Have a project in mind?</h3>
+                    <h3>Get in touch</h3>
                     <p>
-                        I'm always excited to collaborate on cool projects and meet creative people. 
-                        Whether you have a question, want to discuss an idea, or just want to say hi — 
-                        feel free to reach out!
+                        If you'd like to work together on something or just have a question, 
+                        feel free to reach out. I'm always open to chatting about projects and ideas.
                     </p>
                     <div class="contact-links">
                         <a href="https://github.com/Jul1ato" target="_blank" class="contact-link">
@@ -1997,13 +1883,6 @@
                                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                             </svg>
                             GitHub — @Jul1ato
-                        </a>
-                        <a href="mailto:julianthegroot@gmail.com" class="contact-link">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <path d="M22 6l-10 7L2 6"/>
-                            </svg>
-                            julianthegroot@gmail.com
                         </a>
                     </div>
                 </div>
@@ -2034,7 +1913,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-logo">&lt;juliato /&gt;</div>
-        <p class="footer-text">Building the future with code & AI ✨</p>
+        <p class="footer-text">Just building things with code</p>
         <div class="footer-socials">
             <a href="https://github.com/Jul1ato" target="_blank" class="footer-social">
                 <svg viewBox="0 0 24 24" fill="currentColor">
@@ -2048,7 +1927,7 @@
             </a>
         </div>
         <p class="footer-text" style="font-size: 0.85rem;">
-            © 2026 juliato. Made with ❤️ and AI.
+            © 2026 juliato
         </p>
     </footer>
 
@@ -2106,7 +1985,7 @@
                 if (response.ok) {
                     formStatus.style.display = 'block';
                     formStatus.style.color = '#22c55e';
-                    formStatus.textContent = '✓ Thanks for your message! I\'ll get back to you soon. 🚀';
+                    formStatus.textContent = 'Thanks for your message! I\'ll get back to you soon.';
                     contactForm.reset();
                 } else {
                     throw new Error('Form submission failed');
@@ -2114,7 +1993,7 @@
             } catch (error) {
                 formStatus.style.display = 'block';
                 formStatus.style.color = '#ef4444';
-                formStatus.textContent = '✗ Oops! Something went wrong. Please email me directly at julianthegroot@gmail.com';
+                formStatus.textContent = 'Something went wrong. Please try again or reach out through GitHub.';
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Send Message →';
@@ -2172,7 +2051,7 @@
             scrollProgress.style.width = (progress * 100) + '%';
         });
 
-        // ===== PREMIUM CUSTOM CURSOR =====
+        // ===== CUSTOM CURSOR =====
         const cursor = document.getElementById('cursor');
         const cursorDot = document.getElementById('cursorDot');
         let mouseX = 0, mouseY = 0;
@@ -2184,7 +2063,7 @@
             mouseY = e.clientY;
         });
 
-        // Premium smooth cursor with spring physics
+        // Smooth cursor with spring physics
         function animateCursor() {
             // Spring physics for main cursor
             const springStrength = 0.08;
@@ -2357,7 +2236,7 @@
         `;
         document.head.appendChild(style);
 
-        // ===== MAGNETIC BUTTON EFFECT (ENHANCED) =====
+        // ===== MAGNETIC BUTTON EFFECT =====
         document.querySelectorAll('.btn-primary, .btn-secondary, .nav-link').forEach(btn => {
             btn.addEventListener('mousemove', (e) => {
                 const rect = btn.getBoundingClientRect();
@@ -2377,7 +2256,7 @@
             });
         });
 
-        // ===== NAVBAR SCROLL EFFECT (ENHANCED) =====
+        // ===== NAVBAR SCROLL EFFECT =====
         const nav = document.querySelector('nav');
         let lastScrollY = 0;
         
@@ -2411,12 +2290,10 @@
                     dots.forEach((dot, index) => {
                         dot.style.transition = `transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.08}s, 
                                                box-shadow 0.4s ease ${index * 0.08}s`;
-                        dot.style.transform = 'scale(1.4)';
-                        dot.style.boxShadow = '0 0 15px currentColor';
+                        dot.style.transform = 'scale(1.2)';
                         
                         setTimeout(() => {
                             dot.style.transform = 'scale(1)';
-                            dot.style.boxShadow = '0 0 5px currentColor';
                         }, 300 + index * 80);
                     });
                 }
