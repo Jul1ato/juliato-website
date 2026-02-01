@@ -811,7 +811,7 @@
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
-            grid-auto-rows: minmax(180px, auto);
+            grid-auto-rows: minmax(280px, auto);
             gap: 1.5rem;
         }
 
@@ -854,6 +854,11 @@
         }
 
         /* Bento item sizes */
+        .bento-featured {
+            grid-column: span 12;
+            grid-row: span 2;
+        }
+
         .bento-large {
             grid-column: span 8;
             grid-row: span 2;
@@ -866,7 +871,7 @@
 
         .bento-wide {
             grid-column: span 6;
-            grid-row: span 1;
+            grid-row: span 2;
         }
 
         .bento-medium {
@@ -918,6 +923,7 @@
         .bento-item:hover .project-screenshot {
             transform: scale(1.1);
         }
+
 
         .project-visual-bg.has-screenshot {
             opacity: 0.3;
@@ -1635,7 +1641,7 @@
             
             <div class="bento-grid">
                 <!-- Featured: CryptoHub Malta -->
-                <div class="bento-item bento-large fade-up stagger-1">
+                <div class="bento-item bento-wide fade-up stagger-1">
                     <a href="https://cryptohubmalta.org" target="_blank" class="project-link"></a>
                     <div class="featured-badge" style="background: rgba(234, 179, 8, 0.2); border-color: rgba(234, 179, 8, 0.4); color: #eab308;">
                         <div class="live-dot" style="background: #eab308;"></div>
@@ -1644,7 +1650,7 @@
                     <div class="project-inner">
                         <div class="project-visual">
                             <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #854d0e 0%, #422006 50%, #1c1917 100%);"></div>
-                            <img src="screenshots/cryptohub-malta.png" alt="CryptoHub Malta" class="project-screenshot" onerror="this.style.display='none'">
+                            <img src="Screenshot1.png" alt="CryptoHub Malta" class="project-screenshot" id="cryptohub-screenshot" style="object-position: top;" onerror="this.style.display='none'">
                             <div class="shape shape-1" style="background: #eab308; width: 150px; height: 150px;"></div>
                             <div class="shape shape-2" style="background: #eab308; width: 100px; height: 100px; opacity: 0.3;"></div>
                             <div class="floating-elements">
@@ -1668,27 +1674,79 @@
                 </div>
 
                 <!-- Sip & Grow Website -->
-                <div class="bento-item bento-tall fade-up stagger-2">
-                    <a href="https://sipandgrow.org" target="_blank" class="project-link"></a>
+                <div class="bento-item bento-wide fade-up stagger-2">
+                    <a href="https://www.sipandgrow.org" target="_blank" class="project-link"></a>
                     <div class="project-inner">
                         <div class="project-visual">
-                            <div class="project-visual-bg visual-website has-screenshot"></div>
-                            <img src="screenshots/sipandgrow.png" alt="Sip & Grow Website" class="project-screenshot" onerror="this.style.display='none'">
+                            <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #0e7490 0%, #083344 50%, #1c1917 100%);"></div>
+                            <img src="Screenshot4.png" alt="Sip & Grow Website" class="project-screenshot" style="object-position: top;" onerror="this.style.display='none'">
                             <div class="floating-elements">
                                 <span class="float-icon">🌱</span>
                             </div>
                         </div>
                         <div class="project-info">
                             <div class="project-tech-stack">
-                                <span class="tech-pill highlight">Next.js</span>
+                                <span class="tech-pill highlight" style="background: rgba(14, 116, 144, 0.1); border-color: rgba(14, 116, 144, 0.3); color: #06b6d4;">Next.js</span>
                                 <span class="tech-pill">React</span>
                                 <span class="tech-pill">TypeScript</span>
                             </div>
                             <h3 class="project-title">
-                                Sip & Grow
+                                Sip & Grow Website
                                 <span class="arrow">→</span>
                             </h3>
-                            <p class="project-desc">My first website. A Next.js website for a company making biodegradable cups with seeds.</p>
+                            <p class="project-desc">My first website — a playground where I experimented with Next.js, React, and web development fundamentals.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2D Game -->
+                <div class="bento-item bento-wide fade-up stagger-3">
+                    <a href="https://www.sipandgrow.org/game" target="_blank" class="project-link"></a>
+                    <div class="project-inner">
+                        <div class="project-visual">
+                            <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #065f46 0%, #022c22 50%, #1c1917 100%);"></div>
+                            <img src="Screenshot3.png" alt="2D Browser Game" class="project-screenshot" onerror="this.style.display='none'">
+                            <div class="floating-elements">
+                                <span class="float-icon">🎮</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tech-stack">
+                                <span class="tech-pill highlight" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #10b981;">JavaScript</span>
+                                <span class="tech-pill">Canvas</span>
+                                <span class="tech-pill">Next.js</span>
+                            </div>
+                            <h3 class="project-title">
+                                2D Browser Game
+                                <span class="arrow">→</span>
+                            </h3>
+                            <p class="project-desc">A 2D browser game built with JavaScript and HTML Canvas for Sip & Grow.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3D Game -->
+                <div class="bento-item bento-wide fade-up stagger-4">
+                    <a href="https://www.sipandgrow.org/game3d" target="_blank" class="project-link"></a>
+                    <div class="project-inner">
+                        <div class="project-visual">
+                            <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #4c1d95 0%, #1e1b4b 50%, #1c1917 100%);"></div>
+                            <img src="screenshot2.png" alt="3D Browser Game" class="project-screenshot" onerror="this.style.display='none'">
+                            <div class="floating-elements">
+                                <span class="float-icon">🕹️</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tech-stack">
+                                <span class="tech-pill highlight" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3); color: #8b5cf6;">Three.js</span>
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">Next.js</span>
+                            </div>
+                            <h3 class="project-title">
+                                3D Browser Game
+                                <span class="arrow">→</span>
+                            </h3>
+                            <p class="project-desc">A 3D browser game built with Three.js and WebGL for Sip & Grow.</p>
                         </div>
                     </div>
                 </div>
@@ -1884,7 +1942,7 @@
                 </div>
                 <div class="about-visual fade-up stagger-2">
                     <div class="about-card">
-                        <img src="6a46194f-e2d8-4f57-9e90-2e31a6d481b5.png" alt="juliato" class="about-avatar">
+                        <img src="image1.png" alt="juliato" class="about-avatar">
                         <div class="about-tags">
                             <span class="about-tag">Learning</span>
                             <span class="about-tag">Building</span>
