@@ -1,0 +1,9 @@
+# robots.txt for juliato.dev
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://juliato.dev/sitemap.xml
+
+# Disallow admin page
+Disallow: /admin.html
