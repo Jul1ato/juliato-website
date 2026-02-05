@@ -4,6 +4,3 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://juliato.dev/sitemap.xml
-
-# Disallow admin page
-Disallow: /admin.html
