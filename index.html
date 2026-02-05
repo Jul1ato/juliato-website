@@ -1684,8 +1684,8 @@
             
             <div class="bento-grid">
                 <!-- Featured: CryptoHub Malta -->
-                <div class="bento-item bento-wide fade-up stagger-1">
-                    <a href="https://cryptohubmalta.org" target="_blank" class="project-link"></a>
+                <div class="bento-item bento-wide fade-up stagger-1" id="project-cryptohub">
+                    <a href="/projects/cryptohub.html" class="project-link"></a>
                     <div class="featured-badge" style="background: rgba(234, 179, 8, 0.2); border-color: rgba(234, 179, 8, 0.4); color: #eab308;">
                         <div class="live-dot" style="background: #eab308;"></div>
                         Featured Project
@@ -1717,8 +1717,8 @@
                 </div>
 
                 <!-- Sip & Grow Website -->
-                <div class="bento-item bento-wide fade-up stagger-2">
-                    <a href="https://www.sipandgrow.org" target="_blank" class="project-link"></a>
+                <div class="bento-item bento-wide fade-up stagger-2" id="project-sipandgrow">
+                    <a href="/projects/sipandgrow.html" class="project-link"></a>
                     <div class="project-inner">
                         <div class="project-visual">
                             <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #0e7490 0%, #083344 50%, #1c1917 100%);"></div>
@@ -1743,8 +1743,8 @@
                 </div>
 
                 <!-- 2D Game -->
-                <div class="bento-item bento-wide fade-up stagger-3">
-                    <a href="https://www.sipandgrow.org/game" target="_blank" class="project-link"></a>
+                <div class="bento-item bento-wide fade-up stagger-3" id="project-2dgame">
+                    <a href="/projects/2dgame.html" class="project-link"></a>
                     <div class="project-inner">
                         <div class="project-visual">
                             <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #065f46 0%, #022c22 50%, #1c1917 100%);"></div>
@@ -1769,8 +1769,8 @@
                 </div>
 
                 <!-- 3D Game -->
-                <div class="bento-item bento-wide fade-up stagger-4">
-                    <a href="https://www.sipandgrow.org/game3d" target="_blank" class="project-link"></a>
+                <div class="bento-item bento-wide fade-up stagger-4" id="project-3dgame">
+                    <a href="/projects/3dgame.html" class="project-link"></a>
                     <div class="project-inner">
                         <div class="project-visual">
                             <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #4c1d95 0%, #1e1b4b 50%, #1c1917 100%);"></div>
@@ -2453,5 +2453,28 @@
             100% { filter: hue-rotate(360deg); }
         }
     </style>
+
+    <script>
+        // Scroll to last viewed project
+        const lastProject = localStorage.getItem('lastProject');
+        if (lastProject) {
+            const projectIds = {
+                '/projects/cryptohub.html': 'project-cryptohub',
+                '/projects/sipandgrow.html': 'project-sipandgrow',
+                '/projects/2dgame.html': 'project-2dgame',
+                '/projects/3dgame.html': 'project-3dgame'
+            };
+            const elementId = projectIds[lastProject];
+            if (elementId) {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
+                }
+            }
+            localStorage.removeItem('lastProject');
+        }
+    </script>
 </body>
 </html>
