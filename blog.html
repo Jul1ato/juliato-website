@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | juliato</title>
+    <meta name="description" content="Thoughts on development, innovation, and building things with code. Blog by juliato.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="juliato">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="color-scheme" content="dark">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://juliato.dev/blog">
+    <meta property="og:title" content="Blog | juliato">
+    <meta property="og:description" content="Thoughts on development, innovation, and building things with code.">
+    <meta property="og:image" content="https://juliato.dev/og-image.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="juliato Blog">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="juliato.dev">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://juliato.dev/blog">
+    <meta name="twitter:title" content="Blog | juliato">
+    <meta name="twitter:description" content="Thoughts on development, innovation, and building things with code.">
+    <meta name="twitter:image" content="https://juliato.dev/og-image.webp">
+    <meta name="twitter:image:alt" content="juliato Blog">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="canonical" href="https://juliato.dev/blog">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "juliato Blog",
+        "description": "Thoughts on development, innovation, and building things with code.",
+        "url": "https://juliato.dev/blog",
+        "author": {
+            "@type": "Person",
+            "name": "juliato",
+            "url": "https://juliato.dev/"
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --text-muted: #52525b;
+            --accent-gold: #c9a84c;
+            --gradient-main: linear-gradient(135deg, #c9a84c 0%, #a68530 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .container { max-width: 860px; margin: 0 auto; padding: 2rem; }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
+            transition: color 0.2s ease;
+        }
+        .back-link:hover { color: var(--text-primary); }
+
+        .page-header {
+            margin-bottom: 3rem;
+        }
+
+        .page-label {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .page-desc {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .blog-card {
+            display: block;
+            text-decoration: none;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            border-color: rgba(201, 168, 76, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-card-tag {
+            padding: 0.25rem 0.6rem;
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 20px;
+            font-size: 0.78rem;
+            color: var(--accent-gold);
+        }
+
+        .blog-card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .blog-card-excerpt {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .blog-card-read {
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        @media (max-width: 768px) {
+            .page-title { font-size: 1.75rem; }
+            .blog-card { padding: 1.5rem; }
+            .blog-card-title { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Home
+        </a>
+
+        <div class="page-header">
+            <p class="page-label">// Blog</p>
+            <h1 class="page-title">Thoughts & Ideas</h1>
+            <p class="page-desc">Writing about development, innovation, and building things with code.</p>
+        </div>
+
+        <div class="blog-list">
+            <a href="/blog/why-innovating-is-great" class="blog-card">
+                <div class="blog-card-meta">
+                    <span class="blog-card-tag">Thoughts</span>
+                    <span>Feb 22, 2026</span>
+                    <span>5 min read</span>
+                </div>
+                <h2 class="blog-card-title">Why Innovating is Great</h2>
+                <p class="blog-card-excerpt">Innovation isn't reserved for billion-dollar labs or Silicon Valley garages. It's a mindset anyone can adopt — and as a developer, it's the most powerful tool in your toolkit.</p>
+                <span class="blog-card-read">
+                    Read more
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

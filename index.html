@@ -20,7 +20,7 @@
     <meta property="og:url" content="https://juliato.dev/">
     <meta property="og:title" content="juliato | Developer - Web, 3D & AI Projects">
     <meta property="og:description" content="A developer specializing in web development, 3D graphics, and AI. Check out my projects including games, crypto platforms, and more.">
-    <meta property="og:image" content="https://juliato.dev/image1.png">
+    <meta property="og:image" content="https://juliato.dev/og-image.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="juliato Developer Portfolio">
@@ -30,8 +30,12 @@
     <meta name="twitter:url" content="https://juliato.dev/">
     <meta name="twitter:title" content="juliato | Developer - Web, 3D & AI Projects">
     <meta name="twitter:description" content="A developer specializing in web development, 3D graphics, and AI. Check out my projects including games, crypto platforms, and more.">
-    <meta name="twitter:image" content="https://juliato.dev/image1.png">
+    <meta name="twitter:image" content="https://juliato.dev/og-image.webp">
     <meta name="twitter:image:alt" content="juliato Developer Portfolio">
+
+    <!-- Favicon & Manifest -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/site.webmanifest">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://juliato.dev/">
@@ -57,7 +61,10 @@
         "@type": "Person",
         "name": "juliato",
         "url": "https://juliato.dev/",
-        "sameAs": [],
+        "sameAs": [
+            "https://github.com/Jul1ato",
+            "https://www.linkedin.com/in/juliato/"
+        ],
         "jobTitle": "Developer",
         "knowsAbout": ["Web Development", "3D Graphics", "AI", "JavaScript", "React", "Three.js"]
     }
@@ -67,24 +74,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <!-- Lenis Smooth Scroll -->
+    <link rel="preload" href="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" as="script">
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <style>
         :root {
             --bg-dark: #0a0a0f;
             --bg-card: #12121a;
             --bg-card-hover: #1a1a25;
-            --text-primary: #ffffff;
+            --text-primary: #f0f0f0;
             --text-secondary: #a1a1aa;
             --text-muted: #52525b;
-            --accent-cyan: #22d3ee;
-            --accent-purple: #a855f7;
-            --accent-pink: #ec4899;
-            --accent-orange: #f97316;
+            --accent-gold: #c9a84c;
+            --accent-gold-light: #d4b55a;
             --accent-green: #22c55e;
-            --accent-yellow: #eab308;
-            --glow-cyan: rgba(34, 211, 238, 0.4);
-            --glow-purple: rgba(168, 85, 247, 0.4);
-            --gradient-main: linear-gradient(135deg, #22d3ee 0%, #a855f7 50%, #ec4899 100%);
+            --glow-gold: rgba(201, 168, 76, 0.35);
+            --gradient-main: linear-gradient(135deg, #c9a84c 0%, #a68530 100%);
             --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
         }
 
@@ -209,9 +213,9 @@
             z-index: 0;
             opacity: 0.4;
             background: 
-                radial-gradient(ellipse 80% 50% at 20% 40%, rgba(34, 211, 238, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse 50% 30% at 50% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+                radial-gradient(ellipse 80% 50% at 20% 40%, rgba(201, 168, 76, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(201, 168, 76, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 30% at 50% 80%, rgba(201, 168, 76, 0.1) 0%, transparent 50%);
             animation: gradientShift 15s ease-in-out infinite alternate;
         }
 
@@ -442,7 +446,7 @@
 
         /* Gradient Text on Scroll */
         .gradient-text-scroll {
-            background: linear-gradient(90deg, var(--text-primary) 0%, var(--text-primary) 50%, var(--accent-cyan) 50%, var(--accent-purple) 100%);
+            background: linear-gradient(90deg, var(--text-primary) 0%, var(--text-primary) 50%, var(--accent-gold) 50%, var(--accent-gold) 100%);
             background-size: 200% 100%;
             background-clip: text;
             -webkit-background-clip: text;
@@ -508,7 +512,7 @@
         }
 
         .glow-on-scroll.glowing {
-            box-shadow: 0 0 40px var(--glow-cyan), 0 0 80px var(--glow-purple);
+            box-shadow: 0 0 40px var(--glow-gold), 0 0 80px var(--glow-gold);
         }
 
         /* Rotating elements on scroll */
@@ -582,7 +586,7 @@
         .typewriter {
             overflow: hidden;
             white-space: nowrap;
-            border-right: 2px solid var(--accent-cyan);
+            border-right: 2px solid var(--accent-gold);
             animation: typing 3s steps(40) 1s forwards, blink 0.7s step-end infinite;
         }
 
@@ -664,7 +668,7 @@
 
         .nav-github:hover {
             background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent-cyan);
+            border-color: var(--accent-gold);
         }
 
         .nav-github svg {
@@ -710,8 +714,8 @@
         }
 
         @keyframes glow {
-            0% { box-shadow: 0 0 10px rgba(34, 211, 238, 0.1); }
-            100% { box-shadow: 0 0 15px rgba(34, 211, 238, 0.15); }
+            0% { box-shadow: 0 0 10px rgba(201, 168, 76, 0.1); }
+            100% { box-shadow: 0 0 15px rgba(201, 168, 76, 0.15); }
         }
 
 
@@ -772,7 +776,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(168, 85, 247, 0.2);
+            box-shadow: 0 10px 20px rgba(201, 168, 76, 0.2);
         }
 
         .btn-secondary {
@@ -792,7 +796,7 @@
 
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent-purple);
+            border-color: var(--accent-gold);
             transform: translateY(-3px);
         }
 
@@ -841,7 +845,7 @@
         .section-label {
             font-family: 'Fira Code', monospace;
             font-size: 0.85rem;
-            color: var(--accent-cyan);
+            color: var(--accent-gold);
             text-transform: uppercase;
             letter-spacing: 0.15em;
             margin-bottom: 1rem;
@@ -980,15 +984,15 @@
         }
 
         .visual-game {
-            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 50%, #1e1b4b 100%);
+            background: linear-gradient(135deg, #2a2418 0%, #1a1510 50%, #201a12 100%);
         }
 
         .visual-website {
-            background: linear-gradient(135deg, #14532d 0%, #052e16 50%, #1a2e05 100%);
+            background: linear-gradient(135deg, #1a2018 0%, #121810 50%, #181e14 100%);
         }
 
         .visual-featured {
-            background: linear-gradient(135deg, #581c87 0%, #1e1b4b 50%, #0c1445 100%);
+            background: linear-gradient(135deg, #2a2010 0%, #1e1808 50%, #251c0a 100%);
         }
 
         /* 3D floating elements */
@@ -1034,7 +1038,7 @@
         .shape-1 {
             width: 200px;
             height: 200px;
-            background: var(--accent-cyan);
+            background: var(--accent-gold);
             top: 20%;
             right: 10%;
             animation: pulse-shape 8s ease-in-out infinite;
@@ -1043,7 +1047,7 @@
         .shape-2 {
             width: 150px;
             height: 150px;
-            background: var(--accent-purple);
+            background: var(--accent-gold);
             bottom: 20%;
             left: 10%;
             animation: pulse-shape 6s ease-in-out infinite reverse;
@@ -1078,9 +1082,9 @@
         }
 
         .tech-pill.highlight {
-            background: rgba(34, 211, 238, 0.1);
-            border-color: rgba(34, 211, 238, 0.3);
-            color: var(--accent-cyan);
+            background: rgba(201, 168, 76, 0.1);
+            border-color: rgba(201, 168, 76, 0.3);
+            color: var(--accent-gold);
         }
 
         .project-title {
@@ -1096,7 +1100,7 @@
             opacity: 0;
             transform: translateX(-10px);
             transition: all 0.3s ease;
-            color: var(--accent-cyan);
+            color: var(--accent-gold);
         }
 
         .bento-item:hover .project-title .arrow {
@@ -1126,12 +1130,12 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.5rem 1rem;
-            background: rgba(168, 85, 247, 0.2);
-            border: 1px solid rgba(168, 85, 247, 0.4);
+            background: rgba(201, 168, 76, 0.2);
+            border: 1px solid rgba(201, 168, 76, 0.4);
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
-            color: var(--accent-purple);
+            color: var(--accent-gold);
             backdrop-filter: blur(10px);
         }
 
@@ -1233,33 +1237,33 @@
         }
 
         .skill-dot.filled {
-            background: var(--accent-cyan);
+            background: var(--accent-gold);
         }
 
         /* Category colors */
         .category-frontend .skill-category-icon {
-            background: linear-gradient(135deg, rgba(34, 211, 238, 0.2) 0%, rgba(34, 211, 238, 0.05) 100%);
-            color: var(--accent-cyan);
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.2) 0%, rgba(201, 168, 76, 0.05) 100%);
+            color: var(--accent-gold);
         }
-        .category-frontend .skill-dot.filled { background: var(--accent-cyan); }
+        .category-frontend .skill-dot.filled { background: var(--accent-gold); }
 
         .category-backend .skill-category-icon {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(168, 85, 247, 0.05) 100%);
-            color: var(--accent-purple);
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.2) 0%, rgba(201, 168, 76, 0.05) 100%);
+            color: var(--accent-gold);
         }
-        .category-backend .skill-dot.filled { background: var(--accent-purple); }
+        .category-backend .skill-dot.filled { background: var(--accent-gold); }
 
         .category-3d .skill-category-icon {
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.2) 0%, rgba(236, 72, 153, 0.05) 100%);
-            color: var(--accent-pink);
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.2) 0%, rgba(201, 168, 76, 0.05) 100%);
+            color: var(--accent-gold);
         }
-        .category-3d .skill-dot.filled { background: var(--accent-pink); }
+        .category-3d .skill-dot.filled { background: var(--accent-gold); }
 
         .category-ai .skill-category-icon {
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.2) 0%, rgba(249, 115, 22, 0.05) 100%);
-            color: var(--accent-orange);
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.2) 0%, rgba(201, 168, 76, 0.05) 100%);
+            color: var(--accent-gold);
         }
-        .category-ai .skill-dot.filled { background: var(--accent-orange); }
+        .category-ai .skill-dot.filled { background: var(--accent-gold); }
 
         /* About Section */
         .about {
@@ -1295,7 +1299,7 @@
         }
 
         .about-content strong {
-            color: var(--accent-cyan);
+            color: var(--accent-gold);
             font-weight: 600;
         }
 
@@ -1429,14 +1433,14 @@
 
         .contact-link:hover {
             transform: translateX(10px);
-            border-color: var(--accent-cyan);
+            border-color: var(--accent-gold);
             background: var(--bg-card-hover);
         }
 
         .contact-link svg {
             width: 24px;
             height: 24px;
-            color: var(--accent-cyan);
+            color: var(--accent-gold);
         }
 
         .contact-form {
@@ -1474,8 +1478,8 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--accent-cyan);
-            box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.1);
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.1);
         }
 
         .form-group textarea {
@@ -1499,7 +1503,7 @@
 
         .form-submit:hover {
             transform: translateY(-1px);
-            box-shadow: 0 8px 16px rgba(168, 85, 247, 0.2);
+            box-shadow: 0 8px 16px rgba(201, 168, 76, 0.2);
         }
 
         /* Footer */
@@ -1637,6 +1641,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="/blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="https://github.com/Jul1ato" target="_blank" class="nav-github">
@@ -1700,7 +1705,7 @@
                     <div class="project-inner">
                         <div class="project-visual">
                             <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #854d0e 0%, #422006 50%, #1c1917 100%);"></div>
-                            <img src="Screenshot1.png" alt="CryptoHub Malta" class="project-screenshot" id="cryptohub-screenshot" style="object-position: top;" onerror="this.style.display='none'">
+                            <img src="Screenshot1.webp" alt="CryptoHub Malta - A comprehensive crypto community website built with Next.js and React" class="project-screenshot" id="cryptohub-screenshot" width="1728" height="967" loading="lazy" style="object-position: top;" onerror="this.style.display='none'">
                             <div class="shape shape-1" style="background: #eab308; width: 150px; height: 150px;"></div>
                             <div class="shape shape-2" style="background: #eab308; width: 100px; height: 100px; opacity: 0.3;"></div>
                             <div class="floating-elements">
@@ -1729,7 +1734,7 @@
                     <div class="project-inner">
                         <div class="project-visual">
                             <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #0e7490 0%, #083344 50%, #1c1917 100%);"></div>
-                            <img src="Screenshot4.png" alt="Sip & Grow Website" class="project-screenshot" style="object-position: top;" onerror="this.style.display='none'">
+                            <img src="Screenshot4.webp" alt="Sip & Grow - A modern business website built with Next.js, React, and TypeScript" class="project-screenshot" width="1728" height="970" loading="lazy" style="object-position: top;" onerror="this.style.display='none'">
                             <div class="floating-elements">
                                 <span class="float-icon">🌱</span>
                             </div>
@@ -1755,7 +1760,7 @@
                     <div class="project-inner">
                         <div class="project-visual">
                             <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #065f46 0%, #022c22 50%, #1c1917 100%);"></div>
-                            <img src="Screenshot3.png" alt="2D Browser Game" class="project-screenshot" onerror="this.style.display='none'">
+                            <img src="Screenshot3.webp" alt="2D Browser Game built with JavaScript and HTML Canvas API" class="project-screenshot" width="1728" height="976" loading="lazy" onerror="this.style.display='none'">
                             <div class="floating-elements">
                                 <span class="float-icon">🎮</span>
                             </div>
@@ -1781,7 +1786,7 @@
                     <div class="project-inner">
                         <div class="project-visual">
                             <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #4c1d95 0%, #1e1b4b 50%, #1c1917 100%);"></div>
-                            <img src="Screenshot2.png" alt="3D Browser Game" class="project-screenshot" onerror="this.style.display='none'">
+                            <img src="Screenshot2.webp" alt="3D Browser Game built with Three.js and WebGL" class="project-screenshot" width="1728" height="970" loading="lazy" onerror="this.style.display='none'">
                             <div class="floating-elements">
                                 <span class="float-icon">🕹️</span>
                             </div>
@@ -1992,7 +1997,7 @@
                 </div>
                 <div class="about-visual fade-up stagger-2">
                     <div class="about-card">
-                        <img src="image1.png" alt="juliato" class="about-avatar">
+                        <img src="image1.webp" alt="juliato - Developer specializing in web development, 3D graphics, and AI" class="about-avatar" width="512" height="768" loading="lazy">
                         <div class="about-tags">
                             <span class="about-tag">Learning</span>
                             <span class="about-tag">Building</span>

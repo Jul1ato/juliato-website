@@ -1,6 +1,20 @@
 # robots.txt for juliato.dev
 User-agent: *
 Allow: /
+Disallow: /admin
+
+# AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 # Sitemap location
 Sitemap: https://juliato.dev/sitemap.xml

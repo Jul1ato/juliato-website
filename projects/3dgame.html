@@ -4,27 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Browser Game | juliato</title>
-    <meta name="description" content="3D Browser Game - An immersive game built with Three.js and WebGL.">
-    
+    <meta name="description" content="3D Browser Game - An immersive browser game built with Three.js and WebGL, featuring scene management, lighting, textures, and real-time 3D rendering.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="juliato">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="color-scheme" content="dark">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://juliato.dev/projects/3dgame">
     <meta property="og:title" content="3D Browser Game | juliato">
-    <meta property="og:description" content="3D Browser Game - An immersive game built with Three.js and WebGL.">
-    <meta property="og:image" content="https://juliato.dev/Screenshot2.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="3D Browser Game">
-    
+    <meta property="og:description" content="3D Browser Game - An immersive browser game built with Three.js and WebGL, featuring scene management, lighting, textures, and real-time 3D rendering.">
+    <meta property="og:image" content="https://juliato.dev/Screenshot2.webp">
+    <meta property="og:image:width" content="1728">
+    <meta property="og:image:height" content="970">
+    <meta property="og:image:alt" content="3D Browser Game screenshot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="juliato.dev">
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://juliato.dev/projects/3dgame">
     <meta name="twitter:title" content="3D Browser Game | juliato">
-    <meta name="twitter:description" content="3D Browser Game - An immersive game built with Three.js and WebGL.">
-    <meta name="twitter:image" content="https://juliato.dev/Screenshot2.png">
-    <meta name="twitter:image:alt" content="3D Browser Game">
-    
+    <meta name="twitter:description" content="3D Browser Game - An immersive browser game built with Three.js and WebGL, featuring scene management, lighting, textures, and real-time 3D rendering.">
+    <meta name="twitter:image" content="https://juliato.dev/Screenshot2.webp">
+    <meta name="twitter:image:alt" content="3D Browser Game screenshot">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="canonical" href="https://juliato.dev/projects/3dgame">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "3D Browser Game",
+        "description": "An immersive 3D browser game built with Three.js and WebGL, featuring scene management, lighting, textures, and real-time rendering in the browser.",
+        "url": "https://www.sipandgrow.org/game3d",
+        "image": "https://juliato.dev/Screenshot2.webp",
+        "author": {
+            "@type": "Person",
+            "name": "juliato",
+            "url": "https://juliato.dev/"
+        },
+        "keywords": ["Three.js", "WebGL", "3D game", "JavaScript", "browser game", "real-time rendering"],
+        "dateCreated": "2025"
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -35,8 +62,8 @@
             --text-primary: #ffffff;
             --text-secondary: #a1a1aa;
             --text-muted: #52525b;
-            --accent-purple: #8b5cf6;
-            --gradient-main: linear-gradient(135deg, #22d3ee 0%, #a855f7 50%, #ec4899 100%);
+            --accent-gold: #c9a84c;
+            --gradient-main: linear-gradient(135deg, #c9a84c 0%, #a68530 100%);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -83,9 +110,9 @@
             color: var(--text-secondary);
         }
         .tech-pill.highlight {
-            background: rgba(139, 92, 246, 0.1);
-            border-color: rgba(139, 92, 246, 0.3);
-            color: #8b5cf6;
+            background: rgba(201, 168, 76, 0.1);
+            border-color: rgba(201, 168, 76, 0.3);
+            color: #c9a84c;
         }
 
         .project-description {
@@ -116,7 +143,7 @@
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.3);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
         }
         .btn-secondary {
             background: transparent;
@@ -178,7 +205,7 @@
             Back to Home
         </a>
 
-        <img src="../Screenshot2.png" alt="3D Browser Game" class="project-image">
+        <img src="../Screenshot2.webp" alt="3D Browser Game built with Three.js and WebGL" class="project-image" width="1728" height="970" loading="eager">
 
         <div class="project-header">
             <h1 class="project-title">3D Browser Game</h1>
@@ -190,8 +217,14 @@
             </div>
         </div>
 
+        <h2 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">Overview</h2>
         <p class="project-description">
             An immersive 3D browser game built with Three.js and WebGL. This project explores 3D graphics programming, including scene management, lighting, textures, and real-time rendering. A significant step up from 2D, showcasing the power of modern browser capabilities for interactive 3D experiences.
+        </p>
+
+        <h2 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">Technical Details</h2>
+        <p class="project-description">
+            3D scene management with Three.js, real-time WebGL rendering, dynamic lighting and texture mapping, camera controls and user interaction, and integration within the Next.js Sip & Grow website.
         </p>
 
         <div class="project-actions">

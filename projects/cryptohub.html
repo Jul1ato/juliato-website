@@ -4,27 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CryptoHub Malta | juliato</title>
-    <meta name="description" content="CryptoHub Malta - A crypto community website built with Next.js and React.">
-    
+    <meta name="description" content="CryptoHub Malta - A comprehensive crypto community website designed in Figma and built with Next.js, React, and TypeScript.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="juliato">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="color-scheme" content="dark">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://juliato.dev/projects/cryptohub">
     <meta property="og:title" content="CryptoHub Malta | juliato">
-    <meta property="og:description" content="CryptoHub Malta - A crypto community website built with Next.js and React.">
-    <meta property="og:image" content="https://juliato.dev/Screenshot1.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="CryptoHub Malta">
-    
+    <meta property="og:description" content="CryptoHub Malta - A comprehensive crypto community website designed in Figma and built with Next.js, React, and TypeScript.">
+    <meta property="og:image" content="https://juliato.dev/Screenshot1.webp">
+    <meta property="og:image:width" content="1728">
+    <meta property="og:image:height" content="967">
+    <meta property="og:image:alt" content="CryptoHub Malta website screenshot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="juliato.dev">
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://juliato.dev/projects/cryptohub">
     <meta name="twitter:title" content="CryptoHub Malta | juliato">
-    <meta name="twitter:description" content="CryptoHub Malta - A crypto community website built with Next.js and React.">
-    <meta name="twitter:image" content="https://juliato.dev/Screenshot1.png">
-    <meta name="twitter:image:alt" content="CryptoHub Malta">
-    
+    <meta name="twitter:description" content="CryptoHub Malta - A comprehensive crypto community website designed in Figma and built with Next.js, React, and TypeScript.">
+    <meta name="twitter:image" content="https://juliato.dev/Screenshot1.webp">
+    <meta name="twitter:image:alt" content="CryptoHub Malta website screenshot">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="canonical" href="https://juliato.dev/projects/cryptohub">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "CryptoHub Malta",
+        "description": "A comprehensive crypto community website designed in Figma and built with Next.js, React, and TypeScript. Features community information, event listings, and resources for crypto enthusiasts in Malta.",
+        "url": "https://cryptohubmalta.org",
+        "image": "https://juliato.dev/Screenshot1.webp",
+        "author": {
+            "@type": "Person",
+            "name": "juliato",
+            "url": "https://juliato.dev/"
+        },
+        "keywords": ["Next.js", "React", "TypeScript", "Figma", "crypto", "community website"],
+        "dateCreated": "2025"
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -35,8 +62,8 @@
             --text-primary: #ffffff;
             --text-secondary: #a1a1aa;
             --text-muted: #52525b;
-            --accent-yellow: #eab308;
-            --gradient-main: linear-gradient(135deg, #22d3ee 0%, #a855f7 50%, #ec4899 100%);
+            --accent-gold: #c9a84c;
+            --gradient-main: linear-gradient(135deg, #c9a84c 0%, #a68530 100%);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -83,9 +110,9 @@
             color: var(--text-secondary);
         }
         .tech-pill.highlight {
-            background: rgba(234, 179, 8, 0.1);
-            border-color: rgba(234, 179, 8, 0.3);
-            color: #eab308;
+            background: rgba(201, 168, 76, 0.1);
+            border-color: rgba(201, 168, 76, 0.3);
+            color: #c9a84c;
         }
 
         .project-description {
@@ -116,7 +143,7 @@
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.3);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
         }
         .btn-secondary {
             background: transparent;
@@ -178,7 +205,7 @@
             Back to Home
         </a>
 
-        <img src="../Screenshot1.png" alt="CryptoHub Malta" class="project-image">
+        <img src="../Screenshot1.webp" alt="CryptoHub Malta - A comprehensive crypto community website" class="project-image" width="1728" height="967" loading="eager">
 
         <div class="project-header">
             <h1 class="project-title">CryptoHub Malta</h1>
@@ -190,8 +217,14 @@
             </div>
         </div>
 
+        <h2 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">Overview</h2>
         <p class="project-description">
             A comprehensive crypto community website built for CryptoHub Malta. This project was designed from scratch in Figma, featuring a modern dark theme with clean UI elements. Built with Next.js and React for optimal performance and SEO. The site includes community information, event listings, and resources for crypto enthusiasts in Malta.
+        </p>
+
+        <h2 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">Key Features</h2>
+        <p class="project-description">
+            Custom Figma design with modern dark theme, server-side rendering with Next.js for SEO, responsive layout for all devices, community resources and event listings, and TypeScript for type-safe development.
         </p>
 
         <div class="project-actions">

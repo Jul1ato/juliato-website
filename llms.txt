@@ -1,0 +1,46 @@
+# juliato.dev
+
+> A developer portfolio by juliato, specializing in web development, 3D graphics, and AI projects.
+
+## About
+juliato is a developer focused on building modern web applications, interactive 3D experiences, and AI-powered tools. Skilled in full-stack development with a strong focus on frontend technologies and creative coding.
+
+## Projects
+
+### CryptoHub Malta
+A comprehensive crypto community website designed from scratch in Figma and built with Next.js, React, and TypeScript. Features community information, event listings, and resources for crypto enthusiasts in Malta.
+- URL: https://cryptohubmalta.org
+- Tech: Next.js, React, TypeScript, Figma
+
+### Sip & Grow Website
+A modern business website built with Next.js, React, and TypeScript. Features responsive design, component-based architecture, and integrated interactive browser games.
+- URL: https://www.sipandgrow.org
+- Tech: Next.js, React, TypeScript
+
+### 2D Browser Game
+A fun 2D browser game built with JavaScript and HTML Canvas API. Features game loops, sprite animations, collision detection, and user input handling. Integrated into the Sip & Grow website.
+- URL: https://www.sipandgrow.org/game
+- Tech: JavaScript, Canvas API
+
+### 3D Browser Game
+An immersive 3D browser game built with Three.js and WebGL. Features scene management, dynamic lighting, textures, and real-time rendering in the browser.
+- URL: https://www.sipandgrow.org/game3d
+- Tech: Three.js, WebGL, JavaScript
+
+## Blog
+
+### Why Innovating is Great (February 2026)
+Innovation isn't reserved for billion-dollar labs. It's a mindset anyone can adopt. This post explores why building new things, experimenting, and pushing boundaries matters for developers and creators — and why the best time to start is now.
+- URL: https://juliato.dev/blog/why-innovating-is-great
+
+## Skills
+- Frontend: HTML, CSS, JavaScript, TypeScript, React, Next.js, Three.js
+- Backend: Node.js, Python
+- 3D & Graphics: Three.js, WebGL, Canvas API
+- AI & Automation: Machine Learning, AI Agents, Automation Tools
+- Design: Figma
+
+## Contact
+- Website: https://juliato.dev
+- GitHub: https://github.com/Jul1ato
+- LinkedIn: https://www.linkedin.com/in/juliato/

@@ -4,27 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2D Browser Game | juliato</title>
-    <meta name="description" content="2D Browser Game - A fun game built with JavaScript and HTML Canvas.">
-    
+    <meta name="description" content="2D Browser Game - A JavaScript and HTML Canvas game featuring game loops, sprite animations, collision detection, and user input handling.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="juliato">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="color-scheme" content="dark">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://juliato.dev/projects/2dgame">
     <meta property="og:title" content="2D Browser Game | juliato">
-    <meta property="og:description" content="2D Browser Game - A fun game built with JavaScript and HTML Canvas.">
-    <meta property="og:image" content="https://juliato.dev/Screenshot3.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="2D Browser Game">
-    
+    <meta property="og:description" content="2D Browser Game - A JavaScript and HTML Canvas game featuring game loops, sprite animations, collision detection, and user input handling.">
+    <meta property="og:image" content="https://juliato.dev/Screenshot3.webp">
+    <meta property="og:image:width" content="1728">
+    <meta property="og:image:height" content="976">
+    <meta property="og:image:alt" content="2D Browser Game screenshot">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="juliato.dev">
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://juliato.dev/projects/2dgame">
     <meta name="twitter:title" content="2D Browser Game | juliato">
-    <meta name="twitter:description" content="2D Browser Game - A fun game built with JavaScript and HTML Canvas.">
-    <meta name="twitter:image" content="https://juliato.dev/Screenshot3.png">
-    <meta name="twitter:image:alt" content="2D Browser Game">
-    
+    <meta name="twitter:description" content="2D Browser Game - A JavaScript and HTML Canvas game featuring game loops, sprite animations, collision detection, and user input handling.">
+    <meta name="twitter:image" content="https://juliato.dev/Screenshot3.webp">
+    <meta name="twitter:image:alt" content="2D Browser Game screenshot">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="canonical" href="https://juliato.dev/projects/2dgame">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "2D Browser Game",
+        "description": "A fun 2D browser game built with JavaScript and HTML Canvas API, featuring game loops, sprite animations, collision detection, and user input handling.",
+        "url": "https://www.sipandgrow.org/game",
+        "image": "https://juliato.dev/Screenshot3.webp",
+        "author": {
+            "@type": "Person",
+            "name": "juliato",
+            "url": "https://juliato.dev/"
+        },
+        "keywords": ["JavaScript", "Canvas", "game development", "2D game", "browser game"],
+        "dateCreated": "2025"
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -35,8 +62,8 @@
             --text-primary: #ffffff;
             --text-secondary: #a1a1aa;
             --text-muted: #52525b;
-            --accent-green: #10b981;
-            --gradient-main: linear-gradient(135deg, #22d3ee 0%, #a855f7 50%, #ec4899 100%);
+            --accent-gold: #c9a84c;
+            --gradient-main: linear-gradient(135deg, #c9a84c 0%, #a68530 100%);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -83,9 +110,9 @@
             color: var(--text-secondary);
         }
         .tech-pill.highlight {
-            background: rgba(16, 185, 129, 0.1);
-            border-color: rgba(16, 185, 129, 0.3);
-            color: #10b981;
+            background: rgba(201, 168, 76, 0.1);
+            border-color: rgba(201, 168, 76, 0.3);
+            color: #c9a84c;
         }
 
         .project-description {
@@ -116,7 +143,7 @@
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.3);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
         }
         .btn-secondary {
             background: transparent;
@@ -178,7 +205,7 @@
             Back to Home
         </a>
 
-        <img src="../Screenshot3.png" alt="2D Browser Game" class="project-image">
+        <img src="../Screenshot3.webp" alt="2D Browser Game built with JavaScript and HTML Canvas" class="project-image" width="1728" height="976" loading="eager">
 
         <div class="project-header">
             <h1 class="project-title">2D Browser Game</h1>
@@ -189,8 +216,14 @@
             </div>
         </div>
 
+        <h2 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">Overview</h2>
         <p class="project-description">
             A fun 2D browser game built entirely with JavaScript and HTML Canvas API. This project was a deep dive into game development fundamentals - handling game loops, sprite animations, collision detection, and user input. Integrated into the Sip & Grow website as an interactive feature.
+        </p>
+
+        <h2 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">Technical Details</h2>
+        <p class="project-description">
+            Custom game loop with requestAnimationFrame, sprite-based character animations, pixel-perfect collision detection, keyboard and touch input handling, and seamless integration with the Next.js parent site.
         </p>
 
         <div class="project-actions">
