@@ -15,9 +15,14 @@ const MIME = {
 http.createServer((req, res) => {
     let filePath = path.join(ROOT, req.url === '/' ? 'index.html' : req.url);
 
-    // If file doesn't exist and has no extension, try appending .html
-    if (!fs.existsSync(filePath) && !path.extname(filePath)) {
-        filePath += '.html';
+    // If the path has no extension, append .html when the file either
+    // doesn't exist OR is a directory (e.g. /projects when projects/ exists)
+    if (!path.extname(filePath)) {
+        const exists = fs.existsSync(filePath);
+        const isDir = exists && fs.statSync(filePath).isDirectory();
+        if (!exists || isDir) {
+            filePath += '.html';
+        }
     }
 
     fs.readFile(filePath, (err, data) => {
