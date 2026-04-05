@@ -18,3 +18,8 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://juliato.dev/sitemap.xml
+Host: https://juliato.dev
+
+# AI content discovery
+LLMs-txt: https://juliato.dev/llms.txt
+LLMs-full-txt: https://juliato.dev/llms-full.txt

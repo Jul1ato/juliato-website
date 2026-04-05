@@ -1,0 +1,138 @@
+# juliato.dev
+
+> Developer portfolio by juliato. Self-taught developer building web apps, 3D experiences, games, and AI-powered tools. Taught himself to code at 16 using ChatGPT.
+
+## About
+
+juliato is a self-taught developer who learned to code at 16 using ChatGPT. Focus areas: web development, 3D graphics, games, and AI. Makes things because he enjoys making — sites, games, art, half-finished weird little things. Uses AI to handle the tedious parts so he can stay in the creative work.
+
+Side projects so far include 2D and 3D rookie browser games, a web store, a rebrand site for CryptoHub Malta, plus whatever else caught his attention.
+
+## Key Pages
+
+- [Home](https://juliato.dev/): Landing page with intro, hero, and site directory
+- [Projects](https://juliato.dev/projects): Full list of projects built — games, crypto platforms, business sites, AI tools
+- [Blog](https://juliato.dev/blog): Articles on development, innovation, and building things with code
+- [Contact](https://juliato.dev/contact): Contact form for project inquiries and collaboration
+- [About](https://juliato.dev/about): Coming soon
+- [GitHub](https://github.com/Jul1ato): Source code and open projects
+- [LinkedIn](https://www.linkedin.com/in/juliato/): Professional profile
+
+## Projects
+
+### VertAI
+URL: https://juliato.dev/projects/vertai
+Live site: https://www.vertaiapp.com/
+Tech: Next.js, React, AI, Computer Vision, iOS, Android
+
+Overview: VertAI is an AI-powered vertical jump training app. Users record their jump with a smartphone camera, and the app's AI analyzes 8+ biomechanical markers — knee angle, trunk lean, arm swing, and more — then assigns a form grade and builds a personalized multi-week training program targeting the user's specific weaknesses.
+
+Key Features: Real-time form analysis from smartphone video, biomechanical grading (A–F) across multiple markers, personalized multi-week training programs, daily workout structure with progress tracking, and a marketing site built with Next.js paired with iOS and Android apps.
+
+### CryptoHub Malta (Featured)
+URL: https://juliato.dev/projects/cryptohub
+Live site: https://cryptohubmalta.org
+Tech: Next.js, React, TypeScript, Figma
+
+Overview: A comprehensive crypto community website built for CryptoHub Malta. Designed from scratch in Figma, featuring a modern dark theme with clean UI elements. Built with Next.js and React for optimal performance and SEO. The site includes community information, event listings, and resources for crypto enthusiasts in Malta.
+
+Key Features: Custom Figma design with modern dark theme, server-side rendering with Next.js for SEO, responsive layout for all devices, community resources and event listings, and TypeScript for type-safe development.
+
+### Sip & Grow Website
+URL: https://juliato.dev/projects/sipandgrow
+Live site: https://www.sipandgrow.org
+Tech: Next.js, React, TypeScript
+
+Overview: juliato's very first website project — a playground where he learned and experimented with modern web development. Built with Next.js and React, this site became the foundation for exploring web development fundamentals, responsive design, and component-based architecture. It's where the coding journey began.
+
+Key Features: Component-based architecture with React, server-side rendering via Next.js, responsive design for all screen sizes, integrated interactive 2D and 3D browser games, and TypeScript for maintainable code.
+
+### 2D Browser Game
+URL: https://juliato.dev/projects/2dgame
+Live site: https://www.sipandgrow.org/game
+Tech: JavaScript, HTML Canvas API, Next.js
+
+Overview: A 2D browser game built entirely with JavaScript and HTML Canvas API. A deep dive into game development fundamentals — handling game loops, sprite animations, collision detection, and user input. Integrated into the Sip & Grow website as an interactive feature.
+
+Technical Details: Custom game loop with requestAnimationFrame, sprite-based character animations, pixel-perfect collision detection, keyboard and touch input handling, and seamless integration with the Next.js parent site.
+
+### 3D Browser Game
+URL: https://juliato.dev/projects/3dgame
+Live site: https://www.sipandgrow.org/game3d
+Tech: Three.js, WebGL, JavaScript, Next.js
+
+Overview: An immersive 3D browser game built with Three.js and WebGL. Explores 3D graphics programming including scene management, lighting, textures, and real-time rendering. A significant step up from 2D, showcasing the power of modern browser capabilities for interactive 3D experiences.
+
+Technical Details: 3D scene management with Three.js, real-time WebGL rendering, dynamic lighting and texture mapping, camera controls and user interaction, and integration within the Next.js Sip & Grow website.
+
+## Blog Posts
+
+### Why Innovating is Great
+URL: https://juliato.dev/blog/why-innovating-is-great
+Published: February 22, 2026
+Reading time: 5 min
+Keywords: innovation, development, creativity, technology, building
+
+Innovation isn't reserved for billion-dollar labs or Silicon Valley garages. It's a mindset anyone can adopt — and as a developer, it's the most powerful tool in your toolkit.
+
+**Innovation Starts Small**
+
+When most people hear "innovation," they think of groundbreaking inventions — the iPhone, self-driving cars, artificial intelligence. But real innovation often starts much smaller. It's the moment you look at a problem and think, "there has to be a better way to do this."
+
+I've experienced this firsthand. When I was building my first website, I wasn't trying to reinvent the web. I was just trying to make something that worked. But that simple act of creating something from scratch — turning an idea into a working product — that's innovation at its core.
+
+**Building Beats Planning**
+
+One of the biggest traps I see is over-planning. People spend months perfecting an idea in their head, waiting for it to be "ready." But innovation doesn't come from thinking about building. It comes from actually building.
+
+"The best way to predict the future is to create it."
+
+When I built a 3D browser game with Three.js, I didn't have a master plan. I started with a blank canvas, experimented with WebGL rendering, and figured things out as I went. The result wasn't perfect, but it existed — and that mattered more than any plan ever could.
+
+**Why It Matters for Developers**
+
+As developers, we're in a unique position. We have the ability to take an idea and make it real — sometimes in a matter of hours. That's a superpower most people don't have. And with AI tools accelerating our workflows, the gap between idea and execution has never been smaller.
+
+Here's what innovating as a developer has taught me:
+
+- You learn faster by doing. Reading documentation is useful, but nothing beats the lessons you learn when your code breaks at 2 AM and you have to figure out why.
+- Failure is part of the process. Every bug you fix, every feature you scrap, every project you abandon — they all compound into experience that makes your next project better.
+- Small innovations compound. A cleaner way to structure your CSS, a smarter approach to state management, a more efficient workflow — these small improvements stack up over time.
+
+**The AI Angle**
+
+We're living through one of the biggest innovation waves in history. AI is changing how we write code, how we design, how we think about problems. Some people see this as threatening. I see it as the greatest opportunity of our generation.
+
+Using AI in my workflow hasn't made me less of a developer — it's made me a faster one. It handles the repetitive tasks so I can focus on what actually matters: the creative decisions, the architecture, the user experience. That's where real innovation lives.
+
+**Just Start**
+
+If you're reading this and you have an idea — a project, an app, a game, anything — just start building it. Don't wait until you know everything. Don't wait until the conditions are perfect.
+
+The best time to innovate was yesterday. The second best time is now.
+
+Innovation isn't about being the smartest person in the room. It's about being the one who actually ships something. Build it, break it, learn from it, and build something better. That's the cycle. And it's a great one to be part of.
+
+## Skills
+
+**Frontend**: HTML, CSS, JavaScript, TypeScript, React, Next.js, Three.js
+**Backend**: Node.js, Python
+**3D & Graphics**: Three.js, WebGL, HTML Canvas API
+**AI & Automation**: Machine Learning, AI Agents, Automation Tools, AI-assisted coding workflows
+**Design**: Figma, modern dark UI, component-based design systems
+
+## Contact
+
+Open to project collaboration, freelance work, and interesting conversations.
+
+- Website: https://juliato.dev
+- Contact form: https://juliato.dev/contact
+- GitHub: https://github.com/Jul1ato
+- LinkedIn: https://www.linkedin.com/in/juliato/
+
+## AI Discovery Files
+
+- Sitemap: https://juliato.dev/sitemap.xml
+- Robots: https://juliato.dev/robots.txt
+- LLMs index: https://juliato.dev/llms.txt
+- LLMs full (this file): https://juliato.dev/llms-full.txt

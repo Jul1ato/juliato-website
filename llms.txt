@@ -1,37 +1,23 @@
 # juliato.dev
 
-> A developer portfolio by juliato, specializing in web development, 3D graphics, and AI projects.
+> Developer portfolio by juliato. Self-taught developer building web apps, 3D experiences, games, and AI-powered tools. Taught himself to code at 16 using ChatGPT.
 
-## About
-juliato is a developer focused on building modern web applications, interactive 3D experiences, and AI-powered tools. Skilled in full-stack development with a strong focus on frontend technologies and creative coding.
+## Key Pages
+- [Home](https://juliato.dev/): Landing page with intro and site directory
+- [Projects](https://juliato.dev/projects): Full list of built projects — games, crypto platforms, business sites, AI tools
+- [Blog](https://juliato.dev/blog): Articles on development, innovation, and building with code
+- [Contact](https://juliato.dev/contact): Contact form for project inquiries and collaboration
+- [About](https://juliato.dev/about): Coming soon
 
 ## Projects
+- [VertAI](https://juliato.dev/projects/vertai): AI-powered vertical jump training app that analyzes smartphone video to grade form and build personalized training programs (Next.js, React, AI, Computer Vision, iOS/Android)
+- [CryptoHub Malta](https://juliato.dev/projects/cryptohub): Crypto community website for Malta, designed in Figma and built with Next.js and TypeScript (Featured)
+- [Sip & Grow Website](https://juliato.dev/projects/sipandgrow): Business site built with Next.js and React, with integrated browser games
+- [2D Browser Game](https://juliato.dev/projects/2dgame): JavaScript/Canvas API game with sprite animations and collision detection
+- [3D Browser Game](https://juliato.dev/projects/3dgame): Three.js/WebGL immersive 3D experience with dynamic lighting
 
-### CryptoHub Malta
-A comprehensive crypto community website designed from scratch in Figma and built with Next.js, React, and TypeScript. Features community information, event listings, and resources for crypto enthusiasts in Malta.
-- URL: https://cryptohubmalta.org
-- Tech: Next.js, React, TypeScript, Figma
-
-### Sip & Grow Website
-A modern business website built with Next.js, React, and TypeScript. Features responsive design, component-based architecture, and integrated interactive browser games.
-- URL: https://www.sipandgrow.org
-- Tech: Next.js, React, TypeScript
-
-### 2D Browser Game
-A fun 2D browser game built with JavaScript and HTML Canvas API. Features game loops, sprite animations, collision detection, and user input handling. Integrated into the Sip & Grow website.
-- URL: https://www.sipandgrow.org/game
-- Tech: JavaScript, Canvas API
-
-### 3D Browser Game
-An immersive 3D browser game built with Three.js and WebGL. Features scene management, dynamic lighting, textures, and real-time rendering in the browser.
-- URL: https://www.sipandgrow.org/game3d
-- Tech: Three.js, WebGL, JavaScript
-
-## Blog
-
-### Why Innovating is Great (February 2026)
-Innovation isn't reserved for billion-dollar labs. It's a mindset anyone can adopt. This post explores why building new things, experimenting, and pushing boundaries matters for developers and creators — and why the best time to start is now.
-- URL: https://juliato.dev/blog/why-innovating-is-great
+## Blog Articles
+- [Why Innovating is Great](https://juliato.dev/blog/why-innovating-is-great) (Feb 22, 2026): Innovation isn't just for billion-dollar labs — it's a mindset. Why building new things, experimenting, and shipping matters for developers.
 
 ## Skills
 - Frontend: HTML, CSS, JavaScript, TypeScript, React, Next.js, Three.js
@@ -42,5 +28,12 @@ Innovation isn't reserved for billion-dollar labs. It's a mindset anyone can ado
 
 ## Contact
 - Website: https://juliato.dev
+- Contact form: https://juliato.dev/contact
 - GitHub: https://github.com/Jul1ato
 - LinkedIn: https://www.linkedin.com/in/juliato/
+
+## AI Discovery Files
+- Sitemap: https://juliato.dev/sitemap.xml
+- Robots: https://juliato.dev/robots.txt
+- LLMs index (this file): https://juliato.dev/llms.txt
+- LLMs full content: https://juliato.dev/llms-full.txt
