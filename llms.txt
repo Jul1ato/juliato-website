@@ -17,7 +17,8 @@
 - [3D Browser Game](https://juliato.dev/projects/3dgame): Three.js/WebGL immersive 3D experience with dynamic lighting
 
 ## Blog Articles
-- [Why Innovating is Great](https://juliato.dev/blog/why-innovating-is-great) (Feb 22, 2026): Innovation isn't just for billion-dollar labs — it's a mindset. Why building new things, experimenting, and shipping matters for developers.
+- [AI SEO in 2026: A Technical Guide to GEO and llms.txt](https://juliato.dev/blog/ai-seo-2026-guide) (Apr 5, 2026): Technical guide to optimizing content for LLMs. Covers GEO, AEO, RAG, llms.txt, schema.org as grounding, entity SEO, AI crawler directives, semantic chunking, and citation surfaces.
+- [Why Innovating is Great](https://juliato.dev/blog/why-innovating-is-great) (Feb 22, 2026): Innovation isn't just for billion-dollar labs, it's a mindset. Why building new things, experimenting, and shipping matters for developers.
 
 ## Skills
 - Frontend: HTML, CSS, JavaScript, TypeScript, React, Next.js, Three.js

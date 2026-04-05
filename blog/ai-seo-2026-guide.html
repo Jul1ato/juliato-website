@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI SEO in 2026: A Technical Guide to GEO and llms.txt | juliato</title>
+    <meta name="description" content="Traditional SEO targets search results pages. AI SEO targets language models that retrieve, cite, and synthesize your content. Here's what's actually different.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="juliato">
+    <meta name="keywords" content="GEO, AEO, RAG, AI SEO, llms.txt, generative engine optimization, schema.org, entity SEO">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="color-scheme" content="dark">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://juliato.dev/blog/ai-seo-2026-guide">
+    <meta property="og:title" content="AI SEO in 2026: A Technical Guide to GEO and llms.txt | juliato">
+    <meta property="og:description" content="Traditional SEO targets search results pages. AI SEO targets language models that retrieve, cite, and synthesize your content. Here's what's actually different.">
+    <meta property="og:image" content="https://juliato.dev/og-image.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="AI SEO in 2026: A Technical Guide to GEO and llms.txt - Blog post by juliato">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="juliato.dev">
+    <meta property="article:published_time" content="2026-04-05">
+    <meta property="article:modified_time" content="2026-04-05">
+    <meta property="article:author" content="juliato">
+    <meta property="article:section" content="Technical">
+    <meta property="article:tag" content="GEO">
+    <meta property="article:tag" content="AEO">
+    <meta property="article:tag" content="AI SEO">
+    <meta property="article:tag" content="llms.txt">
+    <meta property="article:tag" content="RAG">
+    <meta property="article:tag" content="schema.org">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://juliato.dev/blog/ai-seo-2026-guide">
+    <meta name="twitter:title" content="AI SEO in 2026: A Technical Guide to GEO and llms.txt | juliato">
+    <meta name="twitter:description" content="Traditional SEO targets search results pages. AI SEO targets language models that retrieve, cite, and synthesize your content. Here's what's actually different.">
+    <meta name="twitter:image" content="https://juliato.dev/og-image.webp">
+    <meta name="twitter:image:alt" content="AI SEO in 2026: A Technical Guide to GEO and llms.txt - Blog post by juliato">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="llms-txt" href="/llms.txt">
+    <link rel="canonical" href="https://juliato.dev/blog/ai-seo-2026-guide">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "AI SEO in 2026: A Technical Guide to GEO and llms.txt",
+        "description": "Traditional SEO targets search results pages. AI SEO targets language models that retrieve, cite, and synthesize your content. Here's what's actually different.",
+        "image": "https://juliato.dev/og-image.webp",
+        "url": "https://juliato.dev/blog/ai-seo-2026-guide",
+        "datePublished": "2026-04-05",
+        "dateModified": "2026-04-05",
+        "author": {
+            "@type": "Person",
+            "name": "juliato",
+            "url": "https://juliato.dev/",
+            "sameAs": [
+                "https://github.com/Jul1ato",
+                "https://www.linkedin.com/in/juliato/"
+            ]
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "juliato",
+            "url": "https://juliato.dev/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://juliato.dev/blog/ai-seo-2026-guide"
+        },
+        "articleSection": "Technical",
+        "wordCount": 1049,
+        "timeRequired": "PT6M",
+        "inLanguage": "en-US",
+        "keywords": ["GEO", "AEO", "RAG", "AI SEO", "llms.txt", "generative engine optimization", "schema.org", "entity SEO"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://juliato.dev/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://juliato.dev/blog"},
+            {"@type": "ListItem", "position": 3, "name": "AI SEO in 2026: A Technical Guide to GEO and llms.txt", "item": "https://juliato.dev/blog/ai-seo-2026-guide"}
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --text-muted: #52525b;
+            --accent-gold: #ffffff;
+            --gradient-main: linear-gradient(135deg, #ffffff 0%, #d0d0d0 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .container { max-width: 760px; margin: 0 auto; padding: 4rem 2rem; }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            margin-bottom: 2.5rem;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+        .back-link:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .post-tag {
+            padding: 0.3rem 0.7rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+        }
+
+        .post-title {
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .post-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .post-content h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        .post-content p {
+            font-size: 1.1rem;
+            line-height: 1.85;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content strong {
+            color: var(--text-primary);
+        }
+
+        .post-content blockquote {
+            border-left: 3px solid var(--accent-gold);
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .post-content blockquote p {
+            color: var(--text-primary);
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        .post-content ul,
+        .post-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .post-content li {
+            font-size: 1.1rem;
+            line-height: 1.85;
+            margin-bottom: 0.5rem;
+        }
+
+        .post-content pre {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0 1.5rem;
+            overflow-x: auto;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            line-height: 1.65;
+            color: var(--text-secondary);
+        }
+
+        .post-content code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9em;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            color: var(--text-primary);
+        }
+
+        .post-content pre code {
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            color: inherit;
+        }
+
+        .post-footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-back {
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .post-title { font-size: 2rem; }
+            .post-footer { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/blog" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Blog
+        </a>
+
+        <div class="post-meta">
+            <span class="post-tag">Technical</span>
+            <time datetime="2026-04-05">Apr 5, 2026</time>
+            <span>6 min read</span>
+        </div>
+
+        <h1 class="post-title">AI SEO in 2026: A Technical Guide to GEO and llms.txt</h1>
+
+        <p class="post-subtitle">Search used to mean a results page. Now the searcher might be a language model that never shows you a link. Here's what's actually different about optimizing for that, and what works right now.</p>
+
+        <article class="post-content">
+            <h2>The core shift</h2>
+            <p>Traditional SEO optimizes a page to rank on a results page that a human clicks. AI SEO optimizes a page to be retrieved, quoted, and synthesized by a language model that may never send a click at all. Different audience, different objective.</p>
+            <p>The old question: does my page rank for this keyword? The new question: when an AI answers this query, does my content make it into the answer?</p>
+
+            <h2>Quick definitions</h2>
+            <p>A few terms you'll hit immediately:</p>
+            <ul>
+                <li><strong>GEO (Generative Engine Optimization):</strong> optimizing content to be retrieved, cited, and used by generative AI systems instead of ranked on a results page.</li>
+                <li><strong>AEO (Answer Engine Optimization):</strong> precursor to GEO focused on being the answer to a direct question.</li>
+                <li><strong>RAG (Retrieval-Augmented Generation):</strong> the technique where an LLM fetches documents before answering. GEO is about being the document it fetches.</li>
+                <li><strong>Semantic chunking:</strong> breaking content into self-contained passages that retain meaning in isolation. RAG systems retrieve chunks, not whole pages.</li>
+                <li><strong>Embedding:</strong> the vector representation of a chunk, used to match it to a query.</li>
+                <li><strong>Entity:</strong> a discrete thing (person, product, concept) with a stable identity. Entity SEO is about being the authoritative entity for a concept.</li>
+                <li><strong>Grounding:</strong> giving an LLM verified source material to reduce hallucination.</li>
+                <li><strong>Citation surface:</strong> the set of places where an LLM might reference your content. ChatGPT, Claude, Perplexity, Google AI Overviews, Bing Copilot.</li>
+                <li><strong>llms.txt:</strong> an emerging open spec for a markdown file at a site's root that summarizes content in a format LLMs can parse efficiently.</li>
+            </ul>
+            <p>With that out of the way, here's what actually moves the needle.</p>
+
+            <h2>llms.txt and llms-full.txt</h2>
+            <p>The llms.txt spec, proposed in 2024, is the simplest idea in AI SEO. A markdown file at the root of your site that lists your content in a format LLMs can parse without scraping HTML.</p>
+            <p>Two files, two jobs:</p>
+            <ul>
+                <li><strong>llms.txt</strong> is the index. Short descriptions, links to important pages. Think of it as a site map for machines that read.</li>
+                <li><strong>llms-full.txt</strong> is the content dump. Full text of your important pages, stripped of HTML, ready to be chunked and embedded.</li>
+            </ul>
+            <p>Declare them in robots.txt and link to them from your HTML head:</p>
+            <pre><code>LLMs-txt: https://yoursite.com/llms.txt
+LLMs-full-txt: https://yoursite.com/llms-full.txt</code></pre>
+            <pre><code>&lt;link rel="llms-txt" href="/llms.txt"&gt;</code></pre>
+            <p>Not every AI system reads these files yet. But the cost to add them is close to zero, and a lot of sites getting cited already publish them.</p>
+
+            <h2>Schema.org as grounding data</h2>
+            <p>Structured data (JSON-LD, schema.org) was built for Google rich results. It turns out to be near-perfect food for LLMs too. When you tag a page as a <code>BlogPosting</code> with author, datePublished, wordCount, and articleSection, you're handing an LLM a pre-parsed fact sheet about the content.</p>
+            <p>The schemas that matter most for AI right now:</p>
+            <ul>
+                <li><strong>Article / BlogPosting:</strong> dates, author, word count, keywords.</li>
+                <li><strong>Person:</strong> with <code>sameAs</code> linking to GitHub, LinkedIn, Wikipedia if you have them.</li>
+                <li><strong>Organization:</strong> for entity grounding of companies.</li>
+                <li><strong>BreadcrumbList:</strong> tells the model where a page sits in a site hierarchy.</li>
+                <li><strong>FAQPage:</strong> LLMs love Q&amp;A shaped content. It maps directly to how they output answers.</li>
+                <li><strong>HowTo:</strong> same, but for procedures.</li>
+            </ul>
+            <p><code>sameAs</code> is the most underrated field. It connects your content to entity graphs like Wikidata, Wikipedia, and Crunchbase. If an LLM is trying to decide whether two "John Smiths" are the same person, <code>sameAs</code> is the link that proves it.</p>
+
+            <h2>Entity-first, not keyword-first</h2>
+            <p>Keyword SEO was about ranking for strings. Entity SEO is about being the authoritative node for a concept.</p>
+            <blockquote>
+                <p>"Language models don't match keywords. They match meaning, against an internal knowledge graph."</p>
+            </blockquote>
+            <p>You win when your site is the cleanest source on an entity. Practically:</p>
+            <ul>
+                <li>Claim an entity (your name, your project, your concept) and be consistent about it everywhere.</li>
+                <li>Use the same canonical names across all pages.</li>
+                <li>Link to external entities you reference (Wikipedia, official docs).</li>
+                <li>Keep a single authoritative page per entity, not three half-pages.</li>
+            </ul>
+
+            <h2>AI crawler directives</h2>
+            <p>Different AI systems send different crawlers. You control what they see through robots.txt:</p>
+            <pre><code>User-agent: GPTBot           # OpenAI
+User-agent: ClaudeBot        # Anthropic
+User-agent: PerplexityBot    # Perplexity
+User-agent: Google-Extended  # Google's generative models
+User-agent: CCBot            # Common Crawl</code></pre>
+            <p>Default position: allow them all. Blocking AI crawlers means opting out of being cited. Most sites that care about showing up in AI answers allow everything.</p>
+
+            <h2>Semantic chunking for RAG</h2>
+            <p>When a RAG system retrieves your content, it doesn't grab the whole page. It grabs a chunk, usually a few paragraphs. If the chunk doesn't make sense without the rest of the page, it gets discarded.</p>
+            <p>Write chunks that stand alone:</p>
+            <ul>
+                <li>Each H2 section should be understandable without the H1 context.</li>
+                <li>Open sections with a one-sentence summary that restates the topic.</li>
+                <li>Define acronyms the first time they appear in each section.</li>
+                <li>Avoid "as mentioned above" or "we saw earlier."</li>
+            </ul>
+            <p>Every heading section is a standalone document in miniature.</p>
+
+            <h2>Citation surface</h2>
+            <p>Being cited by an LLM matters more than ranking on page one, because AI answers often don't show ten blue links. There's one answer, maybe three sources linked underneath.</p>
+            <p>Surfaces to optimize for:</p>
+            <ul>
+                <li>ChatGPT with web search</li>
+                <li>Claude with web search and citations</li>
+                <li>Perplexity (citation-first by design)</li>
+                <li>Google AI Overviews</li>
+                <li>Bing Copilot</li>
+            </ul>
+            <p>What gets cited: recent, specific, well-structured content with clear authorship and timestamps. Generic content that reads like it was written by committee gets skipped.</p>
+
+            <h2>What's bleeding edge right now</h2>
+            <p>A few things moving fast as of 2026:</p>
+            <ul>
+                <li><strong>LLM-specific content formats:</strong> structured YAML frontmatter on pages, MCP (Model Context Protocol) endpoints exposing site data directly to agents.</li>
+                <li><strong>Direct-to-LLM APIs:</strong> some sites publishing JSON feeds optimized for model consumption over HTML.</li>
+                <li><strong>Verifiable content:</strong> cryptographic signatures on content to prove authorship and recency.</li>
+                <li><strong>Conversational schema:</strong> Q&amp;A pairs shaped for how people ask LLMs questions, not how they type search queries.</li>
+                <li><strong>llms.txt proliferation:</strong> going from niche spec to default practice.</li>
+            </ul>
+
+            <h2>What to actually do</h2>
+            <p>If you have a site and you care about this:</p>
+            <ol>
+                <li>Add llms.txt and llms-full.txt.</li>
+                <li>Declare them in robots.txt and in <code>&lt;link rel="llms-txt"&gt;</code>.</li>
+                <li>Add JSON-LD schema to every page (Article, Person, Organization, BreadcrumbList).</li>
+                <li>Use <code>sameAs</code> on your Person schema.</li>
+                <li>Write content in self-contained chunks with clear H2 structure.</li>
+                <li>Keep publish and modified timestamps visible and accurate.</li>
+                <li>Don't block AI crawlers unless you have a specific reason.</li>
+            </ol>
+            <p>Traditional SEO isn't going away. But the next ten years of search optimization are about being the source an AI reaches for, not the link a human clicks.</p>
+        </article>
+
+        <div class="post-footer">
+            <a href="/blog" class="btn-back">
+                All Posts
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        localStorage.setItem('lastBlog', '/blog/ai-seo-2026-guide');
+    </script>
+</body>
+</html>

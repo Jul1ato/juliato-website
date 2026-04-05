@@ -67,6 +67,93 @@ Technical Details: 3D scene management with Three.js, real-time WebGL rendering,
 
 ## Blog Posts
 
+### AI SEO in 2026: A Technical Guide to GEO and llms.txt
+URL: https://juliato.dev/blog/ai-seo-2026-guide
+Published: April 5, 2026
+Reading time: 6 min
+Keywords: GEO, AEO, RAG, AI SEO, llms.txt, generative engine optimization, schema.org, entity SEO
+
+Search used to mean a results page. Now the searcher might be a language model that never shows you a link. Here's what's actually different about optimizing for that, and what works right now.
+
+**The core shift**
+
+Traditional SEO optimizes a page to rank on a results page that a human clicks. AI SEO optimizes a page to be retrieved, quoted, and synthesized by a language model that may never send a click at all. Different audience, different objective.
+
+The old question: does my page rank for this keyword? The new question: when an AI answers this query, does my content make it into the answer?
+
+**Quick definitions**
+
+- GEO (Generative Engine Optimization): optimizing content to be retrieved, cited, and used by generative AI systems instead of ranked on a results page.
+- AEO (Answer Engine Optimization): precursor to GEO focused on being the answer to a direct question.
+- RAG (Retrieval-Augmented Generation): the technique where an LLM fetches documents before answering. GEO is about being the document it fetches.
+- Semantic chunking: breaking content into self-contained passages that retain meaning in isolation. RAG systems retrieve chunks, not whole pages.
+- Embedding: the vector representation of a chunk, used to match it to a query.
+- Entity: a discrete thing (person, product, concept) with a stable identity. Entity SEO is about being the authoritative entity for a concept.
+- Grounding: giving an LLM verified source material to reduce hallucination.
+- Citation surface: the set of places where an LLM might reference your content. ChatGPT, Claude, Perplexity, Google AI Overviews, Bing Copilot.
+- llms.txt: an emerging open spec for a markdown file at a site's root that summarizes content in a format LLMs can parse efficiently.
+
+**llms.txt and llms-full.txt**
+
+The llms.txt spec, proposed in 2024, is the simplest idea in AI SEO. A markdown file at the root of your site that lists your content in a format LLMs can parse without scraping HTML.
+
+Two files, two jobs:
+- llms.txt is the index. Short descriptions, links to important pages. A site map for machines that read.
+- llms-full.txt is the content dump. Full text of your important pages, stripped of HTML, ready to be chunked and embedded.
+
+Declare them in robots.txt with LLMs-txt and LLMs-full-txt directives, and link to them from your HTML head with a rel="llms-txt" link tag. Not every AI system reads these files yet, but the cost to add them is close to zero.
+
+**Schema.org as grounding data**
+
+Structured data (JSON-LD, schema.org) was built for Google rich results. It turns out to be near-perfect food for LLMs too. When you tag a page as BlogPosting with author, datePublished, wordCount, and articleSection, you're handing an LLM a pre-parsed fact sheet about the content.
+
+The schemas that matter most for AI right now: Article / BlogPosting for dates, author, word count, keywords. Person with sameAs linking to GitHub, LinkedIn, Wikipedia. Organization for entity grounding of companies. BreadcrumbList to tell the model where a page sits in a site hierarchy. FAQPage since LLMs love Q&A shaped content, it maps directly to how they output answers. HowTo for procedures.
+
+sameAs is the most underrated field. It connects your content to entity graphs like Wikidata, Wikipedia, and Crunchbase. If an LLM is trying to decide whether two "John Smiths" are the same person, sameAs is the link that proves it.
+
+**Entity-first, not keyword-first**
+
+Keyword SEO was about ranking for strings. Entity SEO is about being the authoritative node for a concept. Language models don't match keywords, they match meaning against an internal knowledge graph. You win when your site is the cleanest source on an entity.
+
+Practically: claim an entity and be consistent about it everywhere. Use the same canonical names across all pages. Link to external entities you reference. Keep a single authoritative page per entity, not three half-pages.
+
+**AI crawler directives**
+
+Different AI systems send different crawlers: GPTBot (OpenAI), ClaudeBot (Anthropic), PerplexityBot (Perplexity), Google-Extended (Google's generative models), CCBot (Common Crawl). Default position: allow them all. Blocking AI crawlers means opting out of being cited.
+
+**Semantic chunking for RAG**
+
+When a RAG system retrieves your content, it doesn't grab the whole page. It grabs a chunk, usually a few paragraphs. If the chunk doesn't make sense without the rest of the page, it gets discarded.
+
+Write chunks that stand alone: each H2 section should be understandable without the H1 context. Open sections with a one-sentence summary that restates the topic. Define acronyms the first time they appear in each section. Avoid "as mentioned above" or "we saw earlier." Every heading section is a standalone document in miniature.
+
+**Citation surface**
+
+Being cited by an LLM matters more than ranking on page one, because AI answers often don't show ten blue links. There's one answer, maybe three sources linked underneath. Surfaces to optimize for: ChatGPT with web search, Claude with web search and citations, Perplexity (citation-first by design), Google AI Overviews, Bing Copilot.
+
+What gets cited: recent, specific, well-structured content with clear authorship and timestamps. Generic content that reads like it was written by committee gets skipped.
+
+**What's bleeding edge right now**
+
+A few things moving fast as of 2026:
+- LLM-specific content formats: structured YAML frontmatter on pages, MCP (Model Context Protocol) endpoints exposing site data directly to agents.
+- Direct-to-LLM APIs: some sites publishing JSON feeds optimized for model consumption over HTML.
+- Verifiable content: cryptographic signatures on content to prove authorship and recency.
+- Conversational schema: Q&A pairs shaped for how people ask LLMs questions, not how they type search queries.
+- llms.txt proliferation: going from niche spec to default practice.
+
+**What to actually do**
+
+1. Add llms.txt and llms-full.txt.
+2. Declare them in robots.txt and in a rel="llms-txt" link tag.
+3. Add JSON-LD schema to every page (Article, Person, Organization, BreadcrumbList).
+4. Use sameAs on your Person schema.
+5. Write content in self-contained chunks with clear H2 structure.
+6. Keep publish and modified timestamps visible and accurate.
+7. Don't block AI crawlers unless you have a specific reason.
+
+Traditional SEO isn't going away. But the next ten years of search optimization are about being the source an AI reaches for, not the link a human clicks.
+
 ### Why Innovating is Great
 URL: https://juliato.dev/blog/why-innovating-is-great
 Published: February 22, 2026
