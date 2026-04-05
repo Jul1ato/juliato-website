@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Browser Game | juliato</title>
-    <meta name="description" content="3D Browser Game - An immersive browser game built with Three.js and WebGL, featuring scene management, lighting, textures, and real-time 3D rendering.">
+    <title>VertAI | juliato</title>
+    <meta name="description" content="VertAI — AI-powered vertical jump trainer that analyzes your form via smartphone video and builds personalized training programs.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="juliato">
     <meta name="theme-color" content="#0a0a0f">
@@ -12,46 +12,46 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://juliato.dev/projects/3dgame">
-    <meta property="og:title" content="3D Browser Game | juliato">
-    <meta property="og:description" content="3D Browser Game - An immersive browser game built with Three.js and WebGL, featuring scene management, lighting, textures, and real-time 3D rendering.">
-    <meta property="og:image" content="https://juliato.dev/Screenshot2.webp">
-    <meta property="og:image:width" content="1728">
-    <meta property="og:image:height" content="970">
-    <meta property="og:image:alt" content="3D Browser Game screenshot">
+    <meta property="og:url" content="https://juliato.dev/projects/vertai">
+    <meta property="og:title" content="VertAI | juliato">
+    <meta property="og:description" content="VertAI — AI-powered vertical jump trainer that analyzes your form via smartphone video and builds personalized training programs.">
+    <meta property="og:image" content="https://juliato.dev/vertai.webp">
+    <meta property="og:image:width" content="3456">
+    <meta property="og:image:height" content="1940">
+    <meta property="og:image:alt" content="VertAI landing page">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="juliato.dev">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://juliato.dev/projects/3dgame">
-    <meta name="twitter:title" content="3D Browser Game | juliato">
-    <meta name="twitter:description" content="3D Browser Game - An immersive browser game built with Three.js and WebGL, featuring scene management, lighting, textures, and real-time 3D rendering.">
-    <meta name="twitter:image" content="https://juliato.dev/Screenshot2.webp">
-    <meta name="twitter:image:alt" content="3D Browser Game screenshot">
+    <meta name="twitter:url" content="https://juliato.dev/projects/vertai">
+    <meta name="twitter:title" content="VertAI | juliato">
+    <meta name="twitter:description" content="VertAI — AI-powered vertical jump trainer that analyzes your form via smartphone video and builds personalized training programs.">
+    <meta name="twitter:image" content="https://juliato.dev/vertai.webp">
+    <meta name="twitter:image:alt" content="VertAI landing page">
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="canonical" href="https://juliato.dev/projects/3dgame">
+    <link rel="canonical" href="https://juliato.dev/projects/vertai">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "CreativeWork",
-        "name": "3D Browser Game",
-        "description": "An immersive 3D browser game built with Three.js and WebGL, featuring scene management, lighting, textures, and real-time rendering in the browser.",
-        "url": "https://www.sipandgrow.org/game3d",
-        "image": "https://juliato.dev/Screenshot2.webp",
+        "name": "VertAI",
+        "description": "AI-powered vertical jump trainer that analyzes biomechanics from smartphone video and generates personalized training programs.",
+        "url": "https://www.vertaiapp.com/",
+        "image": "https://juliato.dev/vertai.webp",
         "author": {
             "@type": "Person",
             "name": "juliato",
             "url": "https://juliato.dev/"
         },
-        "keywords": ["Three.js", "WebGL", "3D game", "JavaScript", "browser game", "real-time rendering"],
-        "dateCreated": "2025"
+        "keywords": ["AI", "Computer Vision", "Sports Tech", "Next.js", "React", "iOS", "Android"]
     }
     </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -93,6 +93,7 @@
             width: 100%;
             height: 400px;
             object-fit: cover;
+            object-position: top;
             border-radius: 16px;
             margin-bottom: 2rem;
         }
@@ -110,9 +111,9 @@
             color: var(--text-secondary);
         }
         .tech-pill.highlight {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.12);
-            color: #ffffff;
+            background: rgba(249, 115, 22, 0.1);
+            border-color: rgba(249, 115, 22, 0.3);
+            color: #fb923c;
         }
 
         .project-description {
@@ -122,7 +123,7 @@
             margin-bottom: 2.5rem;
         }
 
-        .project-actions { display: flex; gap: 1rem; margin-bottom: 3rem; }
+        .project-actions { display: flex; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
 
         .btn {
             padding: 1rem 2rem;
@@ -205,31 +206,32 @@
             Back to Projects
         </a>
 
-        <img src="../Screenshot2.webp" alt="3D Browser Game built with Three.js and WebGL" class="project-image" width="1728" height="970" loading="eager">
+        <img src="../vertai.webp" alt="VertAI — AI-powered vertical jump training app" class="project-image" width="3456" height="1940" loading="eager">
 
         <div class="project-header">
-            <h1 class="project-title">3D Browser Game</h1>
+            <h1 class="project-title">VertAI</h1>
             <div class="tech-stack">
-                <span class="tech-pill highlight">Three.js</span>
-                <span class="tech-pill">JavaScript</span>
-                <span class="tech-pill">WebGL</span>
-                <span class="tech-pill">Next.js</span>
+                <span class="tech-pill highlight">Next.js</span>
+                <span class="tech-pill">React</span>
+                <span class="tech-pill">AI</span>
+                <span class="tech-pill">Computer Vision</span>
+                <span class="tech-pill">iOS / Android</span>
             </div>
         </div>
 
         <h2 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">Overview</h2>
         <p class="project-description">
-            An immersive 3D browser game built with Three.js and WebGL. This project explores 3D graphics programming, including scene management, lighting, textures, and real-time rendering. A significant step up from 2D, showcasing the power of modern browser capabilities for interactive 3D experiences.
+            VertAI is an AI-powered vertical jump training app. Users record their jump with a smartphone camera, and the app's AI analyzes 8+ biomechanical markers — knee angle, trunk lean, arm swing, and more — then assigns a form grade and builds a personalized multi-week training program targeting the user's specific weaknesses.
         </p>
 
-        <h2 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">Technical Details</h2>
+        <h2 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-primary);">Key Features</h2>
         <p class="project-description">
-            3D scene management with Three.js, real-time WebGL rendering, dynamic lighting and texture mapping, camera controls and user interaction, and integration within the Next.js Sip & Grow website.
+            Real-time form analysis from smartphone video, biomechanical grading (A–F) across multiple markers, personalized multi-week training programs, daily workout structure with progress tracking, and a marketing site built with Next.js paired with iOS and Android apps.
         </p>
 
         <div class="project-actions">
-            <a href="https://www.sipandgrow.org/game3d" target="_blank" class="btn btn-primary">
-                Play Game
+            <a href="https://www.vertaiapp.com/" target="_blank" rel="noopener" class="btn btn-primary">
+                View Live Site
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
@@ -238,19 +240,19 @@
         </div>
 
         <nav class="project-nav">
-            <a href="2dgame" class="nav-link prev">
+            <a href="3dgame" class="nav-link prev">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
                 <div class="nav-text">
                     <span class="nav-label">Previous</span>
-                    <span class="nav-title">2D Browser Game</span>
+                    <span class="nav-title">3D Browser Game</span>
                 </div>
             </a>
-            <a href="vertai" class="nav-link next">
+            <a href="cryptohub" class="nav-link next">
                 <div class="nav-text">
                     <span class="nav-label">Next</span>
-                    <span class="nav-title">VertAI</span>
+                    <span class="nav-title">CryptoHub Malta</span>
                 </div>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -260,7 +262,7 @@
     </div>
 
     <script>
-        localStorage.setItem('lastProject', '/projects/3dgame');
+        localStorage.setItem('lastProject', '/projects/vertai');
     </script>
 </body>
 </html>
