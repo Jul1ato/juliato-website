@@ -1551,6 +1551,13 @@
             min-height: 140px;
         }
 
+        .g-recaptcha {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: fit-content;
+        }
+
         .form-submit {
             width: 100%;
             padding: 1rem 2rem;
