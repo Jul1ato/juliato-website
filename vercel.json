@@ -1,3 +1,16 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "juliato.dev"
+        }
+      ],
+      "destination": "https://juliato.online/:path*",
+      "permanent": true
+    }
+  ]
 }

@@ -38,12 +38,20 @@
         
         if (contactForm) contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
+            // Require reCAPTCHA completion
+            if (typeof grecaptcha !== 'undefined' && !grecaptcha.getResponse()) {
+                formStatus.style.display = 'block';
+                formStatus.style.color = '#ef4444';
+                formStatus.textContent = 'Please complete the reCAPTCHA before sending.';
+                return;
+            }
+
             // Disable submit button
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
             formStatus.style.display = 'none';
-            
+
             try {
                 const formData = new FormData(contactForm);
                 const response = await fetch(contactForm.action, {
@@ -53,12 +61,13 @@
                         'Accept': 'application/json'
                     }
                 });
-                
+
                 if (response.ok) {
                     formStatus.style.display = 'block';
                     formStatus.style.color = '#22c55e';
                     formStatus.textContent = 'Thanks for your message! I\'ll get back to you soon.';
                     contactForm.reset();
+                    if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
                 } else {
                     throw new Error('Form submission failed');
                 }
@@ -66,6 +75,7 @@
                 formStatus.style.display = 'block';
                 formStatus.style.color = '#ef4444';
                 formStatus.textContent = 'Something went wrong. Please try again or reach out through GitHub.';
+                if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Send Message →';
