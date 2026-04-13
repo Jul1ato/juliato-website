@@ -607,6 +607,37 @@
             justify-content: center;
             position: relative;
             padding: 4rem 2rem;
+            overflow: hidden;
+        }
+
+        .hero-pixels {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            opacity: 0.75;
+            mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, #000 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, #000 40%, transparent 100%);
+        }
+
+        .hero-figure {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            opacity: 0.55;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-pixels, .hero-figure { display: none; }
         }
 
         .hero-layout {
@@ -1585,6 +1616,27 @@
             text-align: center;
             position: relative;
             z-index: 1;
+            overflow: hidden;
+        }
+
+        .footer-pixels {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            opacity: 0.18;
+            mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+        }
+
+        footer > *:not(.footer-pixels) { position: relative; z-index: 1; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .footer-pixels { display: none; }
         }
 
         .footer-logo {
