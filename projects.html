@@ -49,6 +49,7 @@
         },
         "hasPart": [
             {"@type": "CreativeWork", "name": "VertAI", "url": "https://juliato.dev/projects/vertai"},
+            {"@type": "CreativeWork", "name": "FamilyTree", "url": "https://juliato.dev/projects/familytree"},
             {"@type": "CreativeWork", "name": "CryptoHub Malta", "url": "https://juliato.dev/projects/cryptohub"},
             {"@type": "CreativeWork", "name": "Sip & Grow Website", "url": "https://juliato.dev/projects/sipandgrow"},
             {"@type": "CreativeWork", "name": "2D Browser Game", "url": "https://juliato.dev/projects/2dgame"},
@@ -95,12 +96,12 @@
     <section class="projects" id="projects" style="padding-top: 0;">
         <div class="section-container">
             <div class="bento-grid">
-                <div class="bento-item bento-wide fade-up stagger-1" id="project-vertai">
-                    <a href="projects/vertai" class="project-link"></a>
+                <div class="bento-item bento-wide fade-up stagger-1" id="project-vertai" data-repo="VertAI">
+                    <a href="/projects/vertai" class="project-link"></a>
                     <div class="project-inner">
                         <div class="project-visual">
                             <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #c2410c 0%, #7c2d12 50%, #1c1917 100%);"></div>
-                            <img src="vertai.webp" alt="VertAI - AI-powered vertical jump training app" class="project-screenshot" width="3456" height="1940" loading="lazy" style="object-position: top;" onerror="this.style.display='none'">
+                            <img src="/vertai.webp" alt="VertAI - AI-powered vertical jump training app" class="project-screenshot" width="3456" height="1940" loading="lazy" style="object-position: top;" onerror="this.style.display='none'">
                             <div class="floating-elements">
                                 <span class="float-icon">🏀</span>
                             </div>
@@ -121,8 +122,34 @@
                     </div>
                 </div>
 
-                <div class="bento-item bento-wide fade-up stagger-1" id="project-cryptohub">
-                    <a href="projects/cryptohub" class="project-link"></a>
+                <div class="bento-item bento-wide fade-up stagger-1" id="project-familytree" data-repo="FamilyTree">
+                    <a href="/projects/familytree" class="project-link"></a>
+                    <div class="project-inner">
+                        <div class="project-visual">
+                            <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #9f1239 0%, #4c0519 50%, #1c1917 100%);"></div>
+                            <img src="/familytree.webp" alt="FamilyTree - multi-tenant genealogy web app" class="project-screenshot" width="1728" height="970" loading="lazy" style="object-position: top;" onerror="this.style.display='none'">
+                            <div class="floating-elements">
+                                <span class="float-icon">🌳</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tech-stack">
+                                <span class="tech-pill highlight" style="background: rgba(225, 29, 72, 0.1); border-color: rgba(225, 29, 72, 0.3); color: #fb7185;">Next.js</span>
+                                <span class="tech-pill">Supabase</span>
+                                <span class="tech-pill">TypeScript</span>
+                                <span class="tech-pill">Postgres RLS</span>
+                            </div>
+                            <h3 class="project-title">
+                                FamilyTree
+                                <span class="arrow">→</span>
+                            </h3>
+                            <p class="project-desc">multi-tenant web app for exploring and editing .hzb genealogy backups. imports 13k+ people and 22k+ relations and renders them in an interactive pedigree with premium pan / zoom.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-item bento-wide fade-up stagger-1" id="project-cryptohub" data-repo="cryptohub-malta">
+                    <a href="/projects/cryptohub" class="project-link"></a>
                     <div class="featured-badge" style="background: rgba(234, 179, 8, 0.2); border-color: rgba(234, 179, 8, 0.4); color: #eab308;">
                         <div class="live-dot" style="background: #eab308;"></div>
                         Featured Project
@@ -130,7 +157,7 @@
                     <div class="project-inner">
                         <div class="project-visual">
                             <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #854d0e 0%, #422006 50%, #1c1917 100%);"></div>
-                            <img src="Screenshot1.webp" alt="CryptoHub Malta" class="project-screenshot" width="1728" height="967" loading="lazy" style="object-position: top;" onerror="this.style.display='none'">
+                            <img src="/Screenshot1.webp" alt="CryptoHub Malta" class="project-screenshot" width="1728" height="967" loading="lazy" style="object-position: top;" onerror="this.style.display='none'">
                             <div class="shape shape-1" style="background: #eab308; width: 150px; height: 150px;"></div>
                             <div class="shape shape-2" style="background: #eab308; width: 100px; height: 100px; opacity: 0.3;"></div>
                             <div class="floating-elements"><span class="float-icon">₿</span></div>
@@ -148,12 +175,12 @@
                     </div>
                 </div>
 
-                <div class="bento-item bento-wide fade-up stagger-2" id="project-sipandgrow">
-                    <a href="projects/sipandgrow" class="project-link"></a>
+                <div class="bento-item bento-wide fade-up stagger-2" id="project-sipandgrow" data-repo="sip-and-grow">
+                    <a href="/projects/sipandgrow" class="project-link"></a>
                     <div class="project-inner">
                         <div class="project-visual">
                             <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #0e7490 0%, #083344 50%, #1c1917 100%);"></div>
-                            <img src="Screenshot4.webp" alt="Sip & Grow" class="project-screenshot" width="1728" height="970" loading="lazy" style="object-position: top;" onerror="this.style.display='none'">
+                            <img src="/Screenshot4.webp" alt="Sip & Grow" class="project-screenshot" width="1728" height="970" loading="lazy" style="object-position: top;" onerror="this.style.display='none'">
                             <div class="floating-elements"><span class="float-icon">🌱</span></div>
                         </div>
                         <div class="project-info">
@@ -168,12 +195,12 @@
                     </div>
                 </div>
 
-                <div class="bento-item bento-wide fade-up stagger-3" id="project-2dgame">
-                    <a href="projects/2dgame" class="project-link"></a>
+                <div class="bento-item bento-wide fade-up stagger-3" id="project-2dgame" data-repo="2d-browser-game">
+                    <a href="/projects/2dgame" class="project-link"></a>
                     <div class="project-inner">
                         <div class="project-visual">
                             <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #065f46 0%, #022c22 50%, #1c1917 100%);"></div>
-                            <img src="Screenshot3.webp" alt="2D Browser Game" class="project-screenshot" width="1728" height="976" loading="lazy" onerror="this.style.display='none'">
+                            <img src="/Screenshot3.webp" alt="2D Browser Game" class="project-screenshot" width="1728" height="976" loading="lazy" onerror="this.style.display='none'">
                             <div class="floating-elements"><span class="float-icon">🎮</span></div>
                         </div>
                         <div class="project-info">
@@ -188,12 +215,12 @@
                     </div>
                 </div>
 
-                <div class="bento-item bento-wide fade-up stagger-4" id="project-3dgame">
-                    <a href="projects/3dgame" class="project-link"></a>
+                <div class="bento-item bento-wide fade-up stagger-4" id="project-3dgame" data-repo="3d-browser-game">
+                    <a href="/projects/3dgame" class="project-link"></a>
                     <div class="project-inner">
                         <div class="project-visual">
                             <div class="project-visual-bg has-screenshot" style="background: linear-gradient(135deg, #4c1d95 0%, #1e1b4b 50%, #1c1917 100%);"></div>
-                            <img src="Screenshot2.webp" alt="3D Browser Game" class="project-screenshot" width="1728" height="970" loading="lazy" onerror="this.style.display='none'">
+                            <img src="/Screenshot2.webp" alt="3D Browser Game" class="project-screenshot" width="1728" height="970" loading="lazy" onerror="this.style.display='none'">
                             <div class="floating-elements"><span class="float-icon">🕹️</span></div>
                         </div>
                         <div class="project-info">
@@ -230,6 +257,7 @@
     </footer>
 
     <script src="/scripts.js"></script>
+    <script src="/timeline.js"></script>
     
     <!-- Vercel Web Analytics -->
     <script>
