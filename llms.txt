@@ -11,6 +11,7 @@
 
 ## Projects
 - [VertAI](https://juliato.dev/projects/vertai): AI-powered vertical jump training app that analyzes smartphone video to grade form and build personalized training programs (Next.js, React, AI, Computer Vision, iOS/Android)
+- [FamilyTree](https://juliato.dev/projects/familytree): Multi-tenant web app that imports a 13k-person .hzb genealogy backup into Postgres and renders it as an interactive, editable pedigree tree with premium pan/zoom (Next.js, Supabase, TypeScript, Postgres RLS)
 - [CryptoHub Malta](https://juliato.dev/projects/cryptohub): Crypto community website for Malta, designed in Figma and built with Next.js and TypeScript (Featured)
 - [Sip & Grow Website](https://juliato.dev/projects/sipandgrow): Business site built with Next.js and React, with integrated browser games
 - [2D Browser Game](https://juliato.dev/projects/2dgame): JavaScript/Canvas API game with sprite animations and collision detection

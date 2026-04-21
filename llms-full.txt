@@ -29,6 +29,15 @@ Overview: VertAI is an AI-powered vertical jump training app. Users record their
 
 Key Features: Real-time form analysis from smartphone video, biomechanical grading (A–F) across multiple markers, personalized multi-week training programs, daily workout structure with progress tracking, and a marketing site built with Next.js paired with iOS and Android apps.
 
+### FamilyTree
+URL: https://juliato.dev/projects/familytree
+Live demo: https://family-tree-7kxszog6j-julians-projects-702a077c.vercel.app/
+Tech: Next.js, Supabase, TypeScript, Postgres RLS, relatives-tree
+
+Overview: FamilyTree is a multi-tenant web app that takes an old .hzb genealogy backup (a Haza-Data export) and turns it into a visual, interactive pedigree in the browser. The source file had 13,307 people and 22,027 relations going back many generations, trapped in a proprietary binary format. FamilyTree parses the container losslessly, imports everything into Postgres, and lets users pan, zoom, and edit the tree like a document.
+
+Key Features: Lossless parser for the .hzb container format with a data-quality pass that deduplicates persons and relations and flags records with >2 parents. Multi-tenant architecture with Supabase auth and Postgres row-level security so each family's tree is isolated. Windowed rendering around a focused person so a 13k-node dataset stays fluid. Premium pan and zoom tuned against Figma and Google Maps: inertia on pan, rubber-band at zoom limits, ease-out tweens on programmatic viewport changes, keyboard shortcuts, double-click zoom. Inline edit drawer for fields and relations with a trash / restore flow for deletes. Invite system with single-use codes for sharing a tree with family members.
+
 ### CryptoHub Malta (Featured)
 URL: https://juliato.dev/projects/cryptohub
 Live site: https://cryptohubmalta.org
