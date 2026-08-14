@@ -1035,6 +1035,12 @@
             grid-row: span 2;
         }
 
+        /* A lone project card fills the row instead of leaving half the grid
+           empty. Reverts to the normal span as soon as a second one is added. */
+        .bento-grid > .bento-item:only-child {
+            grid-column: span 12;
+        }
+
         .bento-medium {
             grid-column: span 4;
             grid-row: span 1;
@@ -1765,6 +1771,45 @@
         .stagger-2 { transition-delay: 0.2s; }
         .stagger-3 { transition-delay: 0.3s; }
         .stagger-4 { transition-delay: 0.4s; }
+        /* Sparkline Timeline in Project Cards */
+        .spark-timeline {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .spark-graph {
+            width: 100%;
+            height: 32px;
+            margin-bottom: 0.5rem;
+        }
+
+        .spark-svg {
+            width: 100%;
+            height: 100%;
+            color: var(--text-primary);
+        }
+
+        .spark-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .spark-stat {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        .spark-dates {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+        }
+
         @keyframes rainbow {
             0% { filter: hue-rotate(0deg); }
             100% { filter: hue-rotate(360deg); }

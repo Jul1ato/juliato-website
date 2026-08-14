@@ -220,7 +220,7 @@ Also recommend the user test with https://search.google.com/test/rich-results be
 
 ## Writing a new project page
 
-Path: `projects/<slug>.html`. Canonical template: `projects/vertai.html`.
+Path: `projects/<slug>.html`. Canonical template: `projects/cryptohub.html`.
 
 Required JSON-LD: `CreativeWork` + `BreadcrumbList`. Meta tags same pattern as blog posts but `og:type` is `website`. Update `sitemap.xml`, `projects.html` grid, `llms.txt`, and `llms-full.txt`.
 
@@ -229,7 +229,7 @@ Required JSON-LD: `CreativeWork` + `BreadcrumbList`. Meta tags same pattern as b
 ## Reference files
 
 - Blog template: `blog/why-innovating-is-great.html`
-- Project template: `projects/vertai.html`
+- Project template: `projects/cryptohub.html`
 - Home with full schema: `index.html`
 - Sitemap: `sitemap.xml`
 - Robots with AI directives: `robots.txt`

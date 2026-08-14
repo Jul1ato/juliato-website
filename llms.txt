@@ -1,21 +1,16 @@
 # juliato.dev
 
-> Developer portfolio by juliato. Self-taught developer building web apps, 3D experiences, games, and AI-powered tools. Taught himself to code at 16 using ChatGPT.
+> Developer portfolio by juliato. Self-taught developer building web apps and crypto platforms. Taught himself to code at 16 using ChatGPT.
 
 ## Key Pages
 - [Home](https://juliato.dev/): Landing page with intro and site directory
-- [Projects](https://juliato.dev/projects): Full list of built projects — games, crypto platforms, business sites, AI tools
+- [Projects](https://juliato.dev/projects): Full list of built projects — crypto platforms and web apps
 - [Blog](https://juliato.dev/blog): Articles on development, innovation, and building with code
 - [Contact](https://juliato.dev/contact): Contact form for project inquiries and collaboration
 - [About](https://juliato.dev/about): Coming soon
 
 ## Projects
-- [VertAI](https://juliato.dev/projects/vertai): AI-powered vertical jump training app that analyzes smartphone video to grade form and build personalized training programs (Next.js, React, AI, Computer Vision, iOS/Android)
-- [FamilyTree](https://juliato.dev/projects/familytree): Multi-tenant web app that imports a 13k-person .hzb genealogy backup into Postgres and renders it as an interactive, editable pedigree tree with premium pan/zoom (Next.js, Supabase, TypeScript, Postgres RLS)
 - [CryptoHub Malta](https://juliato.dev/projects/cryptohub): Crypto community website for Malta, designed in Figma and built with Next.js and TypeScript (Featured)
-- [Sip & Grow Website](https://juliato.dev/projects/sipandgrow): Business site built with Next.js and React, with integrated browser games
-- [2D Browser Game](https://juliato.dev/projects/2dgame): JavaScript/Canvas API game with sprite animations and collision detection
-- [3D Browser Game](https://juliato.dev/projects/3dgame): Three.js/WebGL immersive 3D experience with dynamic lighting
 
 ## Blog Articles
 - [AI SEO in 2026: A Technical Guide to GEO and llms.txt](https://juliato.dev/blog/ai-seo-2026-guide) (Apr 5, 2026): Technical guide to optimizing content for LLMs. Covers GEO, AEO, RAG, llms.txt, schema.org as grounding, entity SEO, AI crawler directives, semantic chunking, and citation surfaces.
